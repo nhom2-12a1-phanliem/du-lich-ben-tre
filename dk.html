@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khu di tích Đồng Khởi Bến Tre</title>
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f4f6;
+            color: #2c3e50;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+        .navbar-menu {
+            display: flex;
+            justify-content: flex-end;
+            padding: 15px 0;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #ddd;
+        }
+        .navbar-menu a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            background-color: #28a745;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+        .navbar-menu a:hover {
+            background-color: #218838;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .muc-luc {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        .muc-luc h3 {
+            margin-top: 0;
+            color: #17a2b8;
+        }
+        .muc-luc ul {
+            list-style: none;
+            padding: 0;
+        }
+        .muc-luc li {
+            margin: 8px 0;
+        }
+        .muc-luc li a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        .muc-luc li a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+        .content-section {
+            margin-bottom: 40px;
+        }
+        .content-section h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        .content-section img {
+            display: block;
+            margin: 15px 0;
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+        th, td {
+            text-align: left;
+            padding: 12px;
+            font-size: 15px;
+        }
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        th {
+            background-color: #28a745;
+            color: white;
+        }
+        a {
+            color: #007bff;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        h1 {
+            text-align: center;
+            color: #333333;
+            font-size: 2.2em;
+            margin-bottom: 20px;
+        }
+        p {
+            margin: 10px 0;
+        }
+        li {
+            line-height: 1.6;
+        }
+        .review-section {
+  background: #fff;
+  padding: 100px;
+  border-radius: 8px;
+  max-width: 500px;
+  margin: 0 auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.review-section {
+  background: #fff;
+  padding: 100px;
+  border-radius: 8px;
+  max-width: 500px;
+  margin: 0 auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.rating {
+  display: flex;
+  justify-content: flex-start;
+  gap: 5px;
+  margin-bottom: 15px;
+}
+
+.star {
+  font-size: 25px;
+  cursor: pointer;
+  color: #ccc;
+  transition: color 0.3s;
+}
+
+.star:hover,
+.star.selected {
+  color: #f39c12;
+}
+
+textarea {
+  width: 100%;
+  height: 80px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  padding: 10px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+#reviews {
+  margin-top: 20px;
+}
+
+.review-item {
+  margin-bottom: 15px;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.review-item .stars {
+  color: #f39c12;
+}
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    background-color: #71f371;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display: none; /* Ẩn nút mặc định */
+}
+
+#scrollToTopBtn:hover {
+    background-color: #5af58d;
+}
+h2{
+color:#070101;
+}
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="navbar-menu">
+        <a href="index.html">Trang Chủ</a>
+        <a href="tel:+09138167621">Hotline</a>
+    </div>
+
+    <h1>Khu di tích Đồng Khởi Bến Tre, nơi ghi dấu lịch sử hào hùng</h1>
+    <p>Khu di tích Đồng Khởi Bến Tre là nơi ghi dấu lịch sử cách mạng hào hùng của dân tộc ta trong những năm kháng chiến chống Pháp, Mỹ. Bên cạnh những loại hình nghỉ dưỡng sinh thái, tham quan các khu di tích lịch sử cũng là địa điểm được nhiều người lựa chọn khi du lịch Bến Tre.</p>
+
+    <div class="muc-luc">
+        <h3>Mục lục</h3>
+        <ul>
+            <li><a href="#section1">1. Đôi nét về Khu di tích Đồng Khởi Bến Tre</a></li>
+            <li><a href="#section2">2. Có gì thú vị tại Khu di tích Đồng Khởi Bến Tre?</a></li>
+            <li><a href="#section3">3. Giá vé và hướng dẫn đường đi đến khu di tích Đồng Khởi Bến Tre</a></li>
+        </ul>
+    </div>
+    <button id="scrollToTopBtn" title="Lên đầu trang">↑</button>
+
+<p>Chuyến trải nghiệm ở Bến Tre của bạn sẽ càng trở nên ý nghĩa hơn khi biết cách kết hợp hành trình vui chơi, giải trí cùng với tìm hiểu về lịch sử, văn hóa địa phương. Trong đó, Khu di tích Đồng Khởi Bến Tre - Nơi ghi dấu lịch sử cách mạng hào hùng là địa điểm bạn không thể bỏ qua trong hành trình khám phá xứ dừa.</p>
+    <!-- Nội dung các phần giữ nguyên -->
+    <div id="section1" class="content-section">
+        <h2>1. Đôi nét về Khu di tích Đồng Khởi Bến Tre</h2>
+       <p>Khu di tích Đồng Khởi Bến Tre tọa lạc tại xã Định Thủy thuộc huyện Mỏ Cày Nam, nằm cách trung tâm thành phố khoảng 24km. Đầu những năm 1960, đây là nơi phát tiếng súng đầu tiên mở đầu cho phong trào Đồng Khởi của cách mạng miền Nam Việt Nam thời bấy giờ. </p>
+       <p>Hiện nay, Khu di tích Đồng Khởi Bến Tre được xây dựng làm nơi trưng bày những hình ảnh lịch sử về chiến công oanh liệt của quân, dân ta trong hai cuộc kháng chiến dành độc lập. Đồng thời đây cũng là nơi giáo dục truyền thống cách mạng đối với thế hệ trẻ mai sau và phục vụ hoạt động tham quan du lịch, tìm hiểu về ngày Đồng Khởi ở Bến Tre lịch sử. Năm 1993, Khu di tích Đồng Khởi Bến Tre đã được xếp vào loại Di tích lịch sử cấp quốc gia đặc biệt, bao gồm 2 địa điểm chính là Nhà truyền thống và Đình Rắn.</p>
+        <img src="img/dk1.jpg" alt="Mùa trái cây">
+        <p><em>Khu di tích Đồng Khởi Bến Tre là nơi ghi dấu lịch sử cách mạng hào hùng của dân tộc</em></p>
+    </div>
+
+    <div id="section2" class="content-section">
+        <h2>2. Có gì thú vị tại Khu di tích Đồng Khởi Bến Tre?</h2>
+        <h3>2.1 Tham quan Nhà truyền thống trong Khu di tích Đồng Khởi Bến Tre</h3>
+        <p>Nhà truyền thống là điểm nhấn đặc biệt trong Khu di tích Đồng Khởi Bến Tre được khánh thành vào năm 2000. Khu nhà có tổng diện tích hơn 5.000 m2 được xây dựng trên nền của tòa dinh tỉnh trưởng trước đây, bao gồm các hạng mục: Nhà đón tiếp, Bia chiến thắng, Nhà truyền thống và Đền thờ các anh hùng liệt sĩ.</p>
+        <p> Từ ngoài nhìn vào, bạn sẽ bị ấn tưởng bởi các công trình kiến trúc tại Khu di tích Đồng Khởi Bến Tre. Phía bên phải của khu di tích là tấm Bia chiến thắng bằng đá granite tự nhiên cao hơn 3m đặt trên bảy bậc tròn đồng tâm ốp đá mài màu xanh lam. Tấm bia được đặt quay về hướng Nam, mặt trước chạm khắc tám chữ “Anh dũng đồng khởi, thắng Mỹ diệt Ngụy”. Mặt sau tấm bia là nội dung “Ngọn lửa thần kỳ” được khắc nhân ngày kỷ niệm 45 năm ngày Đồng Khởi Bến Tre. </p>
+        <p>Phía sau Bia chiến thắng là Nhà truyền thống Đồng Khởi bao gồm một tầng trệt và một tầng lầu. Nổi bật nhất là biểu tượng ngọn đuốc Đồng Khởi cao 12m trên nóc Nhà truyền thống Khu di tích Đồng Khởi Bến Tre. Công trình ngọn đuốc gồm 3 lớp tượng trưng cho 3 mũi giáp công chính trị, binh vận, võ trang và sự nổi dậy của nhân dân Bến Tre ở 3 dải cù lao. </p>
+        <p>Tầng trệt Nhà truyền thống có diện tích sử dụng 196 m2 là nơi trưng bày những hình ảnh, hiện vật về phong trào đấu tranh chính trị của nhân dân Bến Tre từ năm 1954 đến cuối năm 1959. Ở phía tầng trên là khu vực riêng để trưng bày về nội dung cuộc khởi nghĩa Đồng Khởi năm 1960. Tham quan Nhà truyền thống, bạn sẽ phải bất ngờ trước tinh thần quả cảm, yêu nước của nhân dân Bến Tre thời bấy giờ. Chỉ với những vũ khí thô sơ như mõ dừa, mã tấu, súng ngựa trời, bom mìn tự tạo, mũi chông cau cùng ý chí quyết tâm mà họ đã lập nên nhiều chiến công vẻ vang làm bao quân địch khiếp sợ. </p>
+
+        <img src="img/dk2.jpg" alt="Mùa trái cây">
+      <p><em>Bia chiến thắng được dựng bên phải Khu di tích Đồng Khởi Bến Tre</em></p>
+      <img src="img/dk3.jpg" alt="Mùa trái cây">
+      <p><em>Nhà truyền thống là nơi trưng bày các hiện vật, tư liệu quý giá về phong trào Đồng Khởi</em></p>
+      <img src="img/dk4.jpg" alt="Mùa trái cây">
+      <p><em>Khu di tích Đồng Khởi Bến Tre là nơi giáo dục truyền thống yêu nước cho thế hệ trẻ.</em></p>
+      <h3>2.2 Di tích lịch sử Đình Rắn</h3>
+      <p>Nằm cách Nhà Truyền thống khoảng 500m, Đình Rắn (hay Đình Định Nhơn) nổi tiếng với những huyền thoại bí ẩn cũng là nơi bạn phải ghé thăm trong hành trình khám phá Khu di tích Đồng Khởi Bến Tre. Ngôi đình tọa lạc trên khuôn viên rộng hơn 1.000 m2, được xây dựng theo kiểu chữ nhất gồm 3 gian võ ca, nhà thính và chính diện. Ngày trước có nhiều rắn xuất hiện xung quanh ngôi đình nên người dân địa phương còn gọi nơi đây bằng cái tên Đình Rắn. Cũng như nhiều đình làng Bến Tre khác, nơi đây được xây dựng với mục đích làm nơi thờ tự Thành hoàng Bổn cảnh để cầu xin quốc thái dân an, mưa thuận gió hòa. </p>
+      <p>Từ sau Cách mạng tháng Tám 1945, Đình Rắn được chính quyền cách mạng trưng dụng làm một trong những cơ sở hội họp và phát động nhiều cuộc tiến công vũ trang mang ý nghĩa lịch sử to lớn. Đến năm 1970, do bị ảnh hưởng của chiến tranh nên ngôi đình gần như bị phá sập hoàn toàn. Sau ngày miền Nam hoàn toàn giải phóng, đình Rắn bị tàn phá nặng nề đã được nhân dân địa phương trùng tu, tôn tạo nhiều lần trên nền đất cũ. Đến năm 2005, ngôi đình được tỉnh Bến Tre đầu tư kinh phí xây dựng lại bằng bê tông, cốt thép mới có kiến trúc kiên cố như hiện nay. </p>
+      <p>Hiện nay, tại Đình Rắn còn lưu giữ 46 hiện vật có liên quan đến phong trào Đồng Khởi để phục vụ đông đảo tín đồ du lịch đến tham quan. Bên cạnh đó, Đình  Rắn còn là nơi tổ chức các lễ hội truyền thống của địa phương như: Lễ Hạ điền vào rằm tháng 5 âm lịch, Lễ Thượng điền vào rằm tháng 11 âm lịch và Giỗ tổ Hùng Vương vào ngày mùng 10 tháng 3 âm lịch.</p>
+      <p>Ngoài ra, khi tham quan Khu di tích Đồng Khởi Bến Tre bạn sẽ có cơ hội thưởng thức nghệ thuật đờn ca tài tử bên dòng sông Hàm Luông thơ mộng. Đồng thời, bạn còn được trải nghiệm nhiều món ăn đặc sản nổi tiếng như bánh lá rau mơ xứ dừa, bánh khọt pha nước cốt dừa, cháo cá lóc rau đắng, bánh xèo nấm mối Bến Tre...</p>
+      <img src="img/dk5.jpg" alt="Mùa trái cây">
+      <p><em>Đình Rắn nằm cách Nhà Truyền thống khoảng 500m là một trong hai điểm tham quan chính trong Khu di tích Đồng Khởi Bến Tre </em></p>
+      <img src="img/dk6.jpg" alt="Mùa trái cây">
+      <p><em>Khuôn viên bên trong Đình Rắn được xây dựng theo lối kiến trúc đình làng Nam Bộ truyền thống</em></p>
+    </div>
+  
+        <div id="section3" class="content-section">
+            <h2>3. Giá vé và hướng dẫn đường đi đến khu di tích Đồng Khởi Bến Tre</h2>
+            <p><strong>Giá vé: </strong>Miễn phí.</p>
+            <p><strong>Thời gian mở cửa:</strong> Cả ngày các ngày trong tuần.</p>
+            <p><strong>Vị trí: </strong>xã Định Thủy, huyện Mỏ Cày, tỉnh Bến Tre.</p>
+            <p><strong> Hướng dẫn đường đi: </strong> Để đến thăm Khu di tích Đồng Khởi Bến Tre, từ trung tâm thành phố bạn đi theo Quốc lộ 60 đến cầu Mỏ Cày. Rồi rẽ trái vào Hương lộ 22, tiếp tục di chuyển khoảng 4km nữa là đến đích.</p>
+            <img src="img/dk7.jpg" alt="Mùa trái cây">
+            <p><a href="https://maps.app.goo.gl/FyMmRFXwVypdD63C7">Xem đường đi tại đây</a></p>
+        </div>        
+    <div class="review-section">
+        <h2>Hãy chia sẻ cảm nhận của bạn khi đến khu di tích Đồng Khởi Bến Tre</h2>
+            <div class="rating">
+              <span class="star" data-value="1">★</span>
+              <span class="star" data-value="2">★</span>
+              <span class="star" data-value="3">★</span>
+              <span class="star" data-value="4">★</span>
+              <span class="star" data-value="5">★</span>
+            </div>
+            <textarea id="comment" placeholder="Viết cảm nhận của bạn tại đây..."></textarea>
+            <button id="submit-btn">Gửi cảm nhận</button>
+        
+            <!-- Hiển thị đánh giá -->
+            <div id="reviews">
+              <h3>Các cảm nhận:</h3>
+            </div>
+          </div>
+    </div>
+     </div>
+     </div>
+</div>
+ <script>
+ document.addEventListener('DOMContentLoaded', () => {
+    const stars = document.querySelectorAll('.star'); // Chọn tất cả các sao
+    const commentBox = document.getElementById('comment'); // Textarea bình luận
+    const submitBtn = document.getElementById('submit-btn'); // Nút gửi đánh giá
+    const reviewsContainer = document.getElementById('reviews'); // Khu vực hiển thị đánh giá
+    let selectedRating = 0; // Giá trị sao được chọn (mặc định là 0)
+
+    // Lấy dữ liệu đã lưu từ localStorage và hiển thị cho trang hiện tại
+    loadCommentsForCurrentPage();
+
+    // Xử lý chọn sao
+    stars.forEach((star) => {
+        star.addEventListener('click', () => {
+            selectedRating = parseInt(star.getAttribute('data-value')); // Lấy giá trị sao
+            stars.forEach((s) => s.classList.remove('selected')); // Bỏ chọn tất cả sao
+            for (let i = 0; i < selectedRating; i++) {
+                stars[i].classList.add('selected'); // Chọn sao từ 1 đến sao được chọn
+            }
+        });
+    });
+
+    // Xử lý khi nhấn nút Gửi đánh giá
+    submitBtn.addEventListener('click', () => {
+        const comment = commentBox.value.trim(); // Lấy nội dung bình luận, loại bỏ khoảng trắng
+
+        // Kiểm tra nếu chưa chọn sao
+        if (!selectedRating) {
+            alert('Vui lòng chọn số sao!');
+            return;
+        }
+
+        // Kiểm tra nếu bình luận rỗng
+        if (!comment) {
+            alert('Vui lòng nhập bình luận!');
+            return;
+        }
+
+        // Tạo đối tượng đánh giá
+        const newReview = {
+            stars: selectedRating,
+            comment: comment,
+            pageId: window.location.pathname,  // Lưu URL của trang hiện tại
+        };
+
+        // Lưu đánh giá vào localStorage
+        saveComment(newReview);
+
+        // Thêm đánh giá vào giao diện
+        addReviewToDOM(newReview);
+
+        // Xóa dữ liệu form
+        selectedRating = 0; // Reset số sao
+        stars.forEach((s) => s.classList.remove('selected')); // Bỏ chọn tất cả sao
+        commentBox.value = ''; // Xóa nội dung bình luận
+    });
+
+    // Hàm thêm đánh giá vào giao diện
+    function addReviewToDOM(review) {
+        const reviewItem = document.createElement('div');
+        reviewItem.classList.add('review-item');
+
+        const maxChars = 20; // Số ký tự tối đa hiển thị ban đầu
+        const isLongComment = review.comment.length > maxChars; // Kiểm tra xem bình luận có dài hơn giới hạn không
+        const shortComment = review.comment.substring(0, maxChars) + (isLongComment ? '...' : '');
+
+        reviewItem.innerHTML = `
+            <div class="stars">${'★'.repeat(review.stars)}${'☆'.repeat(5 - review.stars)}</div>
+            <p class="comment">
+                <span class="short">${shortComment}</span>
+                <span class="full" style="display: none;">${review.comment}</span>
+            </p>
+            ${isLongComment ? '<button class="toggle-btn">Xem thêm</button>' : ''}
+        `;
+
+        reviewsContainer.appendChild(reviewItem);
+
+        // Xử lý nút "Xem thêm" hoặc "Thu gọn"
+        if (isLongComment) {
+            const toggleBtn = reviewItem.querySelector('.toggle-btn');
+            const shortText = reviewItem.querySelector('.short');
+            const fullText = reviewItem.querySelector('.full');
+
+            toggleBtn.addEventListener('click', () => {
+                const isExpanded = fullText.style.display === 'inline';
+                shortText.style.display = isExpanded ? 'inline' : 'none';
+                fullText.style.display = isExpanded ? 'none' : 'inline';
+                toggleBtn.textContent = isExpanded ? 'Xem thêm' : 'Thu gọn';
+            });
+        }
+    }
+
+    // Lấy và hiển thị các bình luận cho trang hiện tại
+    function loadCommentsForCurrentPage() {
+        const url = window.location.pathname; // Lấy URL hiện tại
+        const storedComments = JSON.parse(localStorage.getItem('comments')) || [];
+        const commentsForPage = storedComments.filter(comment => comment.pageId === url); // Lọc bình luận theo trang hiện tại
+
+        commentsForPage.forEach(comment => addReviewToDOM(comment)); // Hiển thị bình luận cho trang hiện tại
+    }
+
+    // Lưu bình luận vào localStorage với URL trang
+    function saveComment(comment) {
+        const storedComments = JSON.parse(localStorage.getItem('comments')) || [];
+        storedComments.push(comment); // Thêm bình luận vào mảng
+        localStorage.setItem('comments', JSON.stringify(storedComments)); // Lưu lại vào localStorage
+    }
+});
+
+// Nút cuộn lên đầu trang
+const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+// Hiển thị nút khi bắt đầu cuộn
+window.onscroll = function () {
+    if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
+        scrollToTopBtn.style.display = "block"; // Hiển thị nút
+    } else {
+        scrollToTopBtn.style.display = "none"; // Ẩn nút
+    }
+};
+
+// Khi nhấn vào nút, cuộn lên đầu trang
+scrollToTopBtn.onclick = function () {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+};
+
+ </script>
+</body>
+</html>
+ 

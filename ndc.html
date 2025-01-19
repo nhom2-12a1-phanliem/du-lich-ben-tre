@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khu di tích lăng mộ Nguyễn Đình Chiểu</title>
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f4f6;
+            color: #2c3e50;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+        .navbar-menu {
+            display: flex;
+            justify-content: flex-end;
+            padding: 15px 0;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #ddd;
+        }
+        .navbar-menu a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            background-color: #28a745;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+        .navbar-menu a:hover {
+            background-color: #218838;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .muc-luc {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        .muc-luc h3 {
+            margin-top: 0;
+            color: #17a2b8;
+        }
+        .muc-luc ul {
+            list-style: none;
+            padding: 0;
+        }
+        .muc-luc li {
+            margin: 8px 0;
+        }
+        .muc-luc li a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        .muc-luc li a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+        .content-section {
+            margin-bottom: 40px;
+        }
+        .content-section h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        .content-section img {
+            display: block;
+            margin: 15px 0;
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+        th, td {
+            text-align: left;
+            padding: 12px;
+            font-size: 15px;
+        }
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        th {
+            background-color: #28a745;
+            color: white;
+        }
+        a {
+            color: #007bff;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        h1 {
+            text-align: center;
+            color: #333333;
+            font-size: 2.2em;
+            margin-bottom: 20px;
+        }
+        p {
+            margin: 10px 0;
+        }
+        li {
+            line-height: 1.6;
+        }
+        .review-section {
+  background: #fff;
+  padding: 100px;
+  border-radius: 8px;
+  max-width: 500px;
+  margin: 0 auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.review-section {
+  background: #fff;
+  padding: 100px;
+  border-radius: 8px;
+  max-width: 500px;
+  margin: 0 auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.rating {
+  display: flex;
+  justify-content: flex-start;
+  gap: 5px;
+  margin-bottom: 15px;
+}
+
+.star {
+  font-size: 25px;
+  cursor: pointer;
+  color: #ccc;
+  transition: color 0.3s;
+}
+
+.star:hover,
+.star.selected {
+  color: #f39c12;
+}
+
+textarea {
+  width: 100%;
+  height: 80px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  padding: 10px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+#reviews {
+  margin-top: 20px;
+}
+
+.review-item {
+  margin-bottom: 15px;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.review-item .stars {
+  color: #f39c12;
+}
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    background-color: #71f371;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display: none; /* Ẩn nút mặc định */
+}
+
+#scrollToTopBtn:hover {
+    background-color: #5af58d;
+}
+h2{
+color:#070101;
+}
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="navbar-menu">
+        <a href="index.html">Trang Chủ</a>
+    </div>
+
+    <h1>Lăng mộ Nguyễn Đình Chiểu – Tìm hiểu về di tích lịch sử và văn hóa</h1>
+    <p>Tuy không phải là điểm đến quá nổi bật so với những danh lam khác, nhưng khu di tích lăng mộ Nguyễn Đình Chiểu lại thu hút du khách về sự chân thật của lịch sử và văn hóa qua thời gian. Đây chắc chắn sẽ là điểm dừng chân lý tưởng dành cho du khách. </p>
+
+    <div class="muc-luc">
+        <h3>Mục lục</h3>
+        <ul>
+            <li><a href="#section1">1. Giới thiệu khái quát về khu di tích lăng mộ Nguyễn Đình Chiểu</a></li>
+            <li><a href="#section2">2. Ngắm nhìn vẻ đẹp đậm sắc màu dân tộc tại khu di tích</a></li>
+            <li><a href="#section3">3. Hòa mình vào không khí lễ hội được tổ chức tại khu di tích lăng mộ Nguyễn Đình Chiểu</a></li>
+            <li><a href="#section4">4. Giá vé và hướng dẫn đường đi đến khu di tích lăng mộ Nguyễn Đình Chiểu</a></li>
+        </ul>
+    </div>
+    <button id="scrollToTopBtn" title="Lên đầu trang">↑</button>
+
+    <!-- Nội dung các phần giữ nguyên -->
+    <div id="section1" class="content-section">
+        <h2>1. Giới thiệu khái quát về khu di tích lăng mộ Nguyễn Đình Chiểu</h2>
+       <h3>1.1 Khu di tích lăng mộ Nguyễn Đình Chiểu tọa lạc tại vị trí nào?</h3>
+       <p>Nơi đặt chân của bạn là khu di tích lăng mộ Nguyễn Đình Chiểu – nơi tôn vinh nhà thơ anh hùng, bác sĩ uy tín, và giáo viên gương mẫu. Đây không chỉ là một điểm đến lịch sử, mà còn là địa điểm thu hút những người đam mê du lịch tâm linh.</p>
+        <p>Mỗi năm, lăng mộ này thu hút hàng ngàn lượt khách đến để tưởng nhớ và tôn kính, tạo nên một không khí thiêng liêng. Địa chỉ chính xác của nó là Xã An Đức, huyện Ba Tri, tỉnh Bến Tre. Đây không chỉ là niềm tự hào của cộng đồng địa phương mà còn là điểm đến lý tưởng cho những người muốn khám phá văn hóa và lịch sử đặc sắc của Bến Tre.</p>
+        <img src="img/ndc1.jpg" alt="Mùa trái cây">
+        <h3>1.2 Tìm hiểu về cấu trúc của khu di tích lăng mộ Nguyễn Đình Chiểu?</h3>
+        <p>Khu di tích lăng mộ Nguyễn Đình Chiểu đặc trưng bởi quy mô ấn tượng của nó, chiếm diện tích rộng lớn lên đến 1,5 hecta. Bắt đầu từ năm 1972, quá trình xây dựng của khu lăng mộ đã chính thức khởi công và qua những năm tháng, nhờ các công đoạn trùng tu liên tục, nơi này ngày càng trở nên bề thế và hùng vĩ đến cuối thế kỷ XX.</p>
+        <p>Kết cấu của công trình bao gồm nhiều phần quan trọng như cổng tam quan, đền thờ mới, đền thờ cũ, nhà bia và khu mộ. Điều này tạo nên một không gian kiến trúc đa dạng và phong cách, đồng thời làm nổi bật sự lớn lao và trang trọng của khu di tích này.</p>
+        <img src="img/ndc2.jpg" alt="Mùa trái cây">
+    </div>
+
+    <div id="section2" class="content-section">
+        <h2>2. Ngắm nhìn vẻ đẹp đậm sắc màu dân tộc tại khu di tích</h2>
+        <h3>2.1 Tìm hiểu về nét kiến trúc tại khu di tích lăng mộ Nguyễn Đình Chiểu</h3>
+        <p>Lăng mộ Nguyễn Đình Chiểu, một phần quan trọng của Khu di tích Đồng Khởi Bến Tre, không chỉ là một điểm đặc sắc trong vùng nổi tiếng với cây dừa mà còn là một điểm đến lịch sử và văn hóa không thể bỏ qua. Trước khi bước chân vào không gian trang nghiêm của nghĩa trang lăng mộ, sự ấn tượng đầu tiên của bạn sẽ là cổng tam quan với phong cách truyền thống, mang đến không khí hoài cổ và tôn nghiêm.</p>
+        <p>Cổng tam quan được xây dựng với hình dáng quen thuộc của 2 mái chồng, ngói lợp âm dương màu đỏ gạch, tạo nên một bức tranh đẹp và ấn tượng. Cột trụ mạnh mẽ, sơn màu đỏ son nổi bật, tạo nên một hình ảnh trang trí đẹp mắt. Nhà bia, là điểm nhấn mới của khu di tích, được thêm vào để làm phong phú hệ thống kiến trúc nơi đây. Mặc dù mới được xây dựng, nhà bia vẫn giữ nguyên kiến trúc truyền thống, với chiều cao khoảng 12m và tường ngoại trang trí nghệ thuật độc đáo.</p>
+        <p>Bức tượng bia bằng đá, có kích thước ấn tượng, không chỉ là điểm nhấn lớn mà bạn không thể bỏ qua khi đến đây mà còn chứa đựng bài văn ca ngợi đầy ý nghĩa về công đức của Nguyễn Đình Chiểu và tiểu sử của ông.</p>
+        <p>Đặc biệt, đây cũng là những tháng mà các loại trái cây bước vào mùa thu hoạch nên nếu đến vào thời điểm này các bạn sẽ được thưởng thức các loại trái cây thơm ngon.</p>
+        <p>Đền thờ mới, được xây dựng từ năm 2000 đến 2002, theo phong cách kiến trúc trùng thiềm điệp ốc, là một tác phẩm nghệ thuật ấn tượng với chiều cao lên đến 21m. Đền này vừa tạo nên sự vững chãi với cấu trúc bằng bê tông cốt thép, vừa thể hiện sự tinh tế và tao nhã qua những điểm nhấn truyền thống như ngói âm dương và hoa văn trang trí trên tường.</p>
+        <p>Đền thờ mới không chỉ là nơi trưng bày hình ảnh các vị lãnh đạo mà còn là không gian linh thiêng để thắp hương, cúng bái. Tầng trên của đền có bức tượng chân dung của Nhà thơ, đúc bằng đồng, kèm theo những câu thơ và lời ca tụng ông từ lời nhân dân. Điều này tạo nên một không gian không chỉ là nơi tôn kính mà còn là nơi để khám phá và hiểu rõ hơn về di sản văn hóa của Bến Tre.</p>
+        <img src="img/ndc3.jpg" alt="Mùa trái cây">
+        <h3>2.2 Niềm tự hào của người dân xứ dừa về khu di tích lăng mộ Nguyễn Đình Chiểu</h3>
+        <p>Mặc dù đã trải qua quá trình xây mới, tuy nhiên, chúng ta không thể bỏ qua khu đền thờ cũ, một công trình được khởi công từ năm 1972 với kiến trúc đồng đều với cổng tam quan và diện tích tổng cộng lên đến gần 84m2. Nét đặc trưng của đền thờ này không chỉ là nóc được trang trí chi tiết và hoa văn rồng, mây cách điệu, mà còn là bàn thờ uy nghiêm nơi mà người ta đến để chiêm bái. Hai cột chính đều đắp nổi những câu thơ tương tự như ở đền mới, tạo nên một không gian tâm linh và truyền thống.</p>
+        <p>hông chỉ đơn thuần là những công trình riêng lẻ, mỗi công trình trong khu lăng mộ Nguyễn Đình Chiểu đều hòa mình vào một không gian xanh tươi, với các khoảng sân vườn thoáng đãng được bao quanh bởi đủ loại cây cảnh. Điều này tạo nên không khí yên bình và tĩnh lặng, làm cho những ai đến thăm viếng cảm thấy thư thái.</p>
+        <p>Ngoài ra, khu vực này còn trưng bày những tư liệu quý về thủ lĩnh nghĩa quân và hình ảnh của các phong trào chống Pháp của nhân dân Nam Kỳ cuối thế kỷ XIX. Đây là một điểm đặc biệt quan trọng để hiểu rõ hơn về lịch sử và văn hóa của địa phương.</p>
+        <p>Năm 1990, Khu di tích lăng mộ Nguyễn Đình Chiểu đã nhận được sự công nhận của nhà nước khi được xếp hạng là khu Di tích lịch sử văn hóa cấp quốc gia. Thành tích này tiếp tục được đánh giá cao khi Bộ VH-TT&DL cấp Bằng công nhận khu Di tích văn hóa, lịch sử cấp Quốc gia đặc biệt vào năm 2017, làm tôn vinh giá trị lâu dài và ý nghĩa của Khu di tích này trong bức tranh lịch sử đất Bến Tre.</p>
+        <img src="img/ndc4.jpg" alt="Mùa trái cây">
+    </div>
+
+    <div id="section3" class="content-section">
+        <h2>3. Hòa mình vào không khí lễ hội được tổ chức tại khu di tích lăng mộ Nguyễn Đình Chiểu</h2>
+      <p>Nguyễn Đình Chiểu, mặc dù không phải là con cháu của Bến Tre, nhưng ông đã dành phần lớn cuộc đời của mình để đóng góp cho lao động nghệ thuật tại địa phương này. Nhà thơ này đã tạo ra một ảnh hưởng mạnh mẽ, xây dựng nên tình yêu thương và lòng kính trọng từ phía cộng đồng. Do đó, ngày 1/7 mỗi năm, ngày sinh của ông, đã trở thành một lễ hội truyền thống văn hóa quan trọng đối với người dân Bến Tre, để tưởng nhớ nhà thơ nổi tiếng của vùng đất Nam Bộ này.</p>
+      <p>Lễ hội này mang đến nhiều hoạt động thú vị như lễ dâng hương, thi hóa trang, trích đoạn cải lương của Lục Vân Tiên – Kiều Nguyệt Nga, nói thơ Vân Tiên, đọc văn tế, thi mâm xôi ngày hội, mâm cơm ngày giỗ và nhiều trò chơi truyền thống khác như kéo co, đập niêu, nhảy bao bố,… Đây cũng là dịp tuyệt vời để làm mới và tái hiện truyền thống yêu nước cho thế hệ trẻ.</p>
+      <p>Lễ hội không chỉ là cơ hội để kỷ niệm và tôn vinh nhà thơ, mà còn là dịp tuyệt vời để khám phá văn hóa độc đáo và bày tỏ lòng biết ơn sâu sắc đến các bậc tiền nhân. Tham gia lễ hội, bạn sẽ có cơ hội nghe kể lại những câu chuyện về cuộc đời và sự nghiệp của ông, đồng thời hiểu rõ hơn về tuyển tập các bài thơ của ông trong thời kỳ kháng chiến.</p>
+      <p>Một chuyến ghé thăm tại đây không chỉ là trải nghiệm văn hóa mà còn là sự hồi tưởng và hiểu biết về sự đóng góp lớn lao của bậc tiền nhân này trong quá trình xây dựng đất nước.</p>
+      <img src="img/ndc5.jpg" alt="Mùa trái cây">
+        </div>
+  
+        <div id="section4" class="content-section">
+            <h2>4. Giá vé và hướng dẫn đường đi đến khu di tích lăng mộ Nguyễn Đình Chiểu </h2>
+            <p><strong>Giá vé: </strong>Miễn phí.</p>
+            <p><strong>Thời gian mở cửa:</strong> Từ 7:00 đến 17:00 các ngày trong tuần.</p>
+            <p><strong>Vị trí: </strong>tọa lạc tại ấp Giồng Cục, xã An Đức, huyện Ba Tri, tỉnh Bến Tre. Từ thành phố Bến Tre, bạn di chuyển theo lộ trình từ đường 30 Tháng 4 – Đại Lộ Đồng Khởi – đường tỉnh 887 – Đường tỉnh 885 thì sẽ đến được khu di tích.</p>
+            <p>Ngoài ra, địa điểm Căn cứ khu ủy Sài Gòn Gia Định cũng nằm trên cùng tuyến đường đến Khu di tích Đồng Khởi Bến Tre. Bạn có thể dễ dàng ghé thăm cả hai địa điểm trong chuyến du lịch sinh thái văn hóa lịch sử Bến Tre của mình.</p>
+            <img src="img/ndc6.jpg" alt="Mùa trái cây">
+            <p><a href="https://maps.app.goo.gl/3WX74Y4Y98YAubor9">Xem đường đi tại đây</a></p>
+        </div>        
+    <div class="review-section">
+        <h2>Hãy chia sẻ cảm nhận của bạn khi đến khu di tích lăng mộ Nguyễn Đình Chiểu</h2>
+            <div class="rating">
+              <span class="star" data-value="1">★</span>
+              <span class="star" data-value="2">★</span>
+              <span class="star" data-value="3">★</span>
+              <span class="star" data-value="4">★</span>
+              <span class="star" data-value="5">★</span>
+            </div>
+            <textarea id="comment" placeholder="Viết cảm nhận của bạn tại đây..."></textarea>
+            <button id="submit-btn">Gửi cảm nhận</button>
+        
+            <!-- Hiển thị đánh giá -->
+            <div id="reviews">
+              <h3>Các cảm nhận:</h3>
+            </div>
+          </div>
+    </div>
+     </div>
+     </div>
+</div>
+ <script>
+ document.addEventListener('DOMContentLoaded', () => {
+    const stars = document.querySelectorAll('.star'); // Chọn tất cả các sao
+    const commentBox = document.getElementById('comment'); // Textarea bình luận
+    const submitBtn = document.getElementById('submit-btn'); // Nút gửi đánh giá
+    const reviewsContainer = document.getElementById('reviews'); // Khu vực hiển thị đánh giá
+    let selectedRating = 0; // Giá trị sao được chọn (mặc định là 0)
+
+    // Lấy dữ liệu đã lưu từ localStorage và hiển thị cho trang hiện tại
+    loadCommentsForCurrentPage();
+
+    // Xử lý chọn sao
+    stars.forEach((star) => {
+        star.addEventListener('click', () => {
+            selectedRating = parseInt(star.getAttribute('data-value')); // Lấy giá trị sao
+            stars.forEach((s) => s.classList.remove('selected')); // Bỏ chọn tất cả sao
+            for (let i = 0; i < selectedRating; i++) {
+                stars[i].classList.add('selected'); // Chọn sao từ 1 đến sao được chọn
+            }
+        });
+    });
+
+    // Xử lý khi nhấn nút Gửi đánh giá
+    submitBtn.addEventListener('click', () => {
+        const comment = commentBox.value.trim(); // Lấy nội dung bình luận, loại bỏ khoảng trắng
+
+        // Kiểm tra nếu chưa chọn sao
+        if (!selectedRating) {
+            alert('Vui lòng chọn số sao!');
+            return;
+        }
+
+        // Kiểm tra nếu bình luận rỗng
+        if (!comment) {
+            alert('Vui lòng nhập bình luận!');
+            return;
+        }
+
+        // Tạo đối tượng đánh giá
+        const newReview = {
+            stars: selectedRating,
+            comment: comment,
+            pageId: window.location.pathname,  // Lưu URL của trang hiện tại
+        };
+
+        // Lưu đánh giá vào localStorage
+        saveComment(newReview);
+
+        // Thêm đánh giá vào giao diện
+        addReviewToDOM(newReview);
+
+        // Xóa dữ liệu form
+        selectedRating = 0; // Reset số sao
+        stars.forEach((s) => s.classList.remove('selected')); // Bỏ chọn tất cả sao
+        commentBox.value = ''; // Xóa nội dung bình luận
+    });
+
+    // Hàm thêm đánh giá vào giao diện
+    function addReviewToDOM(review) {
+        const reviewItem = document.createElement('div');
+        reviewItem.classList.add('review-item');
+
+        const maxChars = 20; // Số ký tự tối đa hiển thị ban đầu
+        const isLongComment = review.comment.length > maxChars; // Kiểm tra xem bình luận có dài hơn giới hạn không
+        const shortComment = review.comment.substring(0, maxChars) + (isLongComment ? '...' : '');
+
+        reviewItem.innerHTML = `
+            <div class="stars">${'★'.repeat(review.stars)}${'☆'.repeat(5 - review.stars)}</div>
+            <p class="comment">
+                <span class="short">${shortComment}</span>
+                <span class="full" style="display: none;">${review.comment}</span>
+            </p>
+            ${isLongComment ? '<button class="toggle-btn">Xem thêm</button>' : ''}
+        `;
+
+        reviewsContainer.appendChild(reviewItem);
+
+        // Xử lý nút "Xem thêm" hoặc "Thu gọn"
+        if (isLongComment) {
+            const toggleBtn = reviewItem.querySelector('.toggle-btn');
+            const shortText = reviewItem.querySelector('.short');
+            const fullText = reviewItem.querySelector('.full');
+
+            toggleBtn.addEventListener('click', () => {
+                const isExpanded = fullText.style.display === 'inline';
+                shortText.style.display = isExpanded ? 'inline' : 'none';
+                fullText.style.display = isExpanded ? 'none' : 'inline';
+                toggleBtn.textContent = isExpanded ? 'Xem thêm' : 'Thu gọn';
+            });
+        }
+    }
+
+    // Lấy và hiển thị các bình luận cho trang hiện tại
+    function loadCommentsForCurrentPage() {
+        const url = window.location.pathname; // Lấy URL hiện tại
+        const storedComments = JSON.parse(localStorage.getItem('comments')) || [];
+        const commentsForPage = storedComments.filter(comment => comment.pageId === url); // Lọc bình luận theo trang hiện tại
+
+        commentsForPage.forEach(comment => addReviewToDOM(comment)); // Hiển thị bình luận cho trang hiện tại
+    }
+
+    // Lưu bình luận vào localStorage với URL trang
+    function saveComment(comment) {
+        const storedComments = JSON.parse(localStorage.getItem('comments')) || [];
+        storedComments.push(comment); // Thêm bình luận vào mảng
+        localStorage.setItem('comments', JSON.stringify(storedComments)); // Lưu lại vào localStorage
+    }
+});
+
+// Nút cuộn lên đầu trang
+const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+// Hiển thị nút khi bắt đầu cuộn
+window.onscroll = function () {
+    if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
+        scrollToTopBtn.style.display = "block"; // Hiển thị nút
+    } else {
+        scrollToTopBtn.style.display = "none"; // Ẩn nút
+    }
+};
+
+// Khi nhấn vào nút, cuộn lên đầu trang
+scrollToTopBtn.onclick = function () {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+};
+
+ </script>
+</body>
+</html>

@@ -1,0 +1,398 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khu du lịch Lan Vương</title>
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f4f6;
+            color: #2c3e50;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+        .navbar-menu {
+            display: flex;
+            justify-content: flex-end;
+            padding: 15px 0;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #ddd;
+        }
+        .navbar-menu a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            background-color: #28a745;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+        .navbar-menu a:hover {
+            background-color: #218838;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .muc-luc {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        .muc-luc h3 {
+            margin-top: 0;
+            color: #17a2b8;
+        }
+        .muc-luc ul {
+            list-style: none;
+            padding: 0;
+        }
+        .muc-luc li {
+            margin: 8px 0;
+        }
+        .muc-luc li a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        .muc-luc li a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+        .content-section {
+            margin-bottom: 40px;
+        }
+        .content-section h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        .content-section img {
+            display: block;
+            margin: 15px 0;
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+        th, td {
+            text-align: left;
+            padding: 12px;
+            font-size: 15px;
+        }
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        th {
+            background-color: #28a745;
+            color: white;
+        }
+        a {
+            color: #007bff;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        h1 {
+            text-align: center;
+            color: #333333;
+            font-size: 2.2em;
+            margin-bottom: 20px;
+        }
+        p {
+            margin: 10px 0;
+        }
+        li {
+            line-height: 1.6;
+        }
+        .review-section {
+  background: #fff;
+  padding: 100px;
+  border-radius: 8px;
+  max-width: 500px;
+  margin: 0 auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.review-section {
+  background: #fff;
+  padding: 100px;
+  border-radius: 8px;
+  max-width: 500px;
+  margin: 0 auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.rating {
+  display: flex;
+  justify-content: flex-start;
+  gap: 5px;
+  margin-bottom: 15px;
+}
+
+.star {
+  font-size: 25px;
+  cursor: pointer;
+  color: #ccc;
+  transition: color 0.3s;
+}
+
+.star:hover,
+.star.selected {
+  color: #f39c12;
+}
+
+textarea {
+  width: 100%;
+  height: 80px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  padding: 10px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+#reviews {
+  margin-top: 20px;
+}
+
+.review-item {
+  margin-bottom: 15px;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.review-item .stars {
+  color: #f39c12;
+}
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    background-color: #71f371;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display: none; /* Ẩn nút mặc định */
+}
+
+#scrollToTopBtn:hover {
+    background-color: #5af58d;
+}
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="navbar-menu">
+        <a href="index.html">Trang Chủ</a>
+    </div>
+    <h1>Lịch trình du lịch Bến Tre</h1>
+
+    <h2>Ngày 1</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Thời gian</th>
+                <th>Hoạt động</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>6:00 - 8:00</td>
+                <td>Khởi hành từ TP.HCM đến Bến Tre (khoảng 2-2,5 giờ di chuyển).</td>
+            </tr>
+            <tr>
+                <td>8:00 - 10:30</td>
+                <td>Tham quan khu du lịch Lan Vương: chèo xuồng ba lá, đi cầu khỉ, tát mương bắt cá, tham gia trò chơi dân gian.</td>
+            </tr>
+            <tr>
+                <td>11:30 - 13:30</td>
+                <td>Nghỉ ngơi và ăn trưa tại khu du lịch.</td>
+            </tr>
+            <tr>
+                <td>13:30 - 15:00</td>
+                <td>Tham quan Làng du kích Đồng Khởi: tìm hiểu lịch sử và tham quan các địa điểm lịch sử như hầm trú ẩn, căn cứ địa.</td>
+            </tr>
+            <tr>
+                <td>15:00 - 16:00</td>
+                <td>Ăn trưa với các món dân dã như bánh xèo, cá lóc nướng trui.</td>
+            </tr>
+            <tr>
+                <td>17:00</td>
+                <td>Nghỉ ngơi để chuẩn bị cho lần tham quan tiếp theo.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Ngày 2</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Thời gian</th>
+                <th>Hoạt động</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>8:00</td>
+                <td>Dùng bữa sáng.</td>
+            </tr>
+            <tr>
+                <td>9:00 - 11:00</td>
+                <td>Tham quan Bảo tàng tỉnh Bến Tre: tìm hiểu lịch sử, khám phá khu di tích Láng Le Bàu Cò và Nhà lao Tân Hiệp.</td>
+            </tr>
+            <tr>
+                <td>11:00 - 12:00</td>
+                <td>Tham quan Tòa đại sứ quán Mỹ.</td>
+            </tr>
+            <tr>
+                <td>12:00 - 13:00</td>
+                <td>Dùng bữa trưa tại nhà hàng địa phương.</td>
+            </tr>
+            <tr>
+                <td>13:30 - 15:00</td>
+                <td>Tham quan Cồn Phụng: thưởng thức trà mật ong, nghe đờn ca tài tử.</td>
+            </tr>
+            <tr>
+                <td>15:00 - 16:00</td>
+                <td>Tham quan vườn trái cây, tự tay hái và thưởng thức trái cây tươi.</td>
+            </tr>
+            <tr>
+                <td>16:00 - 17:00</td>
+                <td>Tham quan lò kẹo dừa, tìm hiểu quy trình làm kẹo và thưởng thức sản phẩm.</td>
+            </tr>
+            <tr>
+                <td>18:00</td>
+                <td>Dùng bữa tối với các món đặc sản miền Tây.</td>
+            </tr>
+            <tr>
+                <td>19:00</td>
+                <td>Nghỉ ngơi tại khách sạn.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Ngày 3</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Thời gian</th>
+                <th>Hoạt động</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>7:30</td>
+                <td>Tham quan nông trại du lịch sân chim Vàm Hồ.</td>
+            </tr>
+            <tr>
+                <td>8:00</td>
+                <td>Khám phá hệ sinh thái rừng ngập mặn.</td>
+            </tr>
+            <tr>
+                <td>9:00</td>
+                <td>Làm bánh tráng hoặc nấu ăn với nguyên liệu tự nhiên tại nông trại.</td>
+            </tr>
+            <tr>
+                <td>10:00</td>
+                <td>Tham gia các hoạt động trò chơi.</td>
+            </tr>
+            <tr>
+                <td>11:30 - 13:30</td>
+                <td>Nghỉ ngơi và ăn trưa tại khu du lịch.</td>
+            </tr>
+            <tr>
+                <td>13:30</td>
+                <td>Tham quan Đền thờ và Khu mộ Nguyễn Đình Chiểu.</td>
+            </tr>
+            <tr>
+                <td>14:00</td>
+                <td>Nghe giới thiệu về cuộc đời và sự nghiệp của Nguyễn Đình Chiểu, nhà thơ yêu nước nổi tiếng.</td>
+            </tr>
+            <tr>
+                <td>15:00</td>
+                <td>Thăm nhà bia ghi danh và chiêm ngưỡng kiến trúc cổ của đền thờ.</td>
+            </tr>
+            <tr>
+                <td>16:00</td>
+                <td>Thắp hương tưởng niệm tại khu mộ Nguyễn Đình Chiểu.</td>
+            </tr>
+            <tr>
+                <td>17:00</td>
+                <td>Ăn uống và nghỉ ngơi tại Ba Tri để chuẩn bị cho lần tham quan tiếp theo.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Ngày 4</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Thời gian</th>
+                <th>Hoạt động</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>7:00</td>
+                <td>Dùng bữa sáng, di chuyển đến chùa Vạn Phước.</td>
+            </tr>
+            <tr>
+                <td>8:30</td>
+                <td>Vào chính điện để thắp nhang, cầu nguyện bình an.</td>
+            </tr>
+            <tr>
+                <td>9:00</td>
+                <td>Nghe hướng dẫn viên giới thiệu về lịch sử hình thành chùa và các tượng Phật lớn.</td>
+            </tr>
+            <tr>
+                <td>10:00</td>
+                <td>Chiêm ngưỡng các tác phẩm điêu khắc tinh xảo và tranh tường mô tả giáo lý nhà Phật.</td>
+            </tr>
+            <tr>
+                <td>11:00</td>
+                <td>Trở về nơi xuất phát.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

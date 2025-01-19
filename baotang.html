@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bảo tàng Bến Tre</title>
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f4f6;
+            color: #2c3e50;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+        .navbar-menu {
+            display: flex;
+            justify-content: flex-end;
+            padding: 15px 0;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #ddd;
+        }
+        .navbar-menu a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            background-color: #28a745;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+        .navbar-menu a:hover {
+            background-color: #218838;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .muc-luc {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        .muc-luc h3 {
+            margin-top: 0;
+            color: #17a2b8;
+        }
+        .muc-luc ul {
+            list-style: none;
+            padding: 0;
+        }
+        .muc-luc li {
+            margin: 8px 0;
+        }
+        .muc-luc li a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        .muc-luc li a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+        .content-section {
+            margin-bottom: 40px;
+        }
+        .content-section h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        .content-section img {
+            display: block;
+            margin: 15px 0;
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+        th, td {
+            text-align: left;
+            padding: 12px;
+            font-size: 15px;
+        }
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        th {
+            background-color: #28a745;
+            color: white;
+        }
+        a {
+            color: #007bff;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        h1 {
+            text-align: center;
+            color: #333333;
+            font-size: 2.2em;
+            margin-bottom: 20px;
+        }
+        p {
+            margin: 10px 0;
+        }
+        li {
+            line-height: 1.6;
+        }
+        .review-section {
+  background: #fff;
+  padding: 100px;
+  border-radius: 8px;
+  max-width: 500px;
+  margin: 0 auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.review-section {
+  background: #fff;
+  padding: 100px;
+  border-radius: 8px;
+  max-width: 500px;
+  margin: 0 auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.rating {
+  display: flex;
+  justify-content: flex-start;
+  gap: 5px;
+  margin-bottom: 15px;
+}
+
+.star {
+  font-size: 25px;
+  cursor: pointer;
+  color: #ccc;
+  transition: color 0.3s;
+}
+
+.star:hover,
+.star.selected {
+  color: #f39c12;
+}
+
+textarea {
+  width: 100%;
+  height: 80px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  padding: 10px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+#reviews {
+  margin-top: 20px;
+}
+
+.review-item {
+  margin-bottom: 15px;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.review-item .stars {
+  color: #f39c12;
+}
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    background-color: #71f371;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display: none; /* Ẩn nút mặc định */
+}
+
+#scrollToTopBtn:hover {
+    background-color: #5af58d;
+}
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="navbar-menu">
+        <a href="index.html">Trang Chủ</a>
+        <a href="https://www.facebook.com/share/1DN9fNBb3J/">Facebook</a>
+        <a href="tel:+02753822735">Hotline</a>
+    </div>
+
+    <h1>Bảo tàng Bến Tre: nơi cất giữ nét đẹp văn hóa và lịch sử của xứ Dừa</h1>
+    <p>Bảo tàng Bến Tre đem đến những trải nghiệm đặc sắc như thế nào? Đừng ngần ngại mà hãy đồng hành cùng Luhanhvietnam trong chuyến du lịch Bến Tre của bạn! Với sự đa dạng về lịch sử và những hiện vật nổi bật, điểm đến này hứa hẹn sẽ đưa bạn khám phá sâu hơn về vùng đất và con người của nơi này.</p>
+
+    <div class="muc-luc">
+        <h3>Mục lục</h3>
+        <ul>
+            <li><a href="#section1">1. Đôi nét giới thiệu về bảo tàng Bến Tre</a></li>
+            <li><a href="#section2">2. Cách di chuyển đến bảo tàng Bến Tre </a></li>
+            <li><a href="#section3">3. Giá vé của bảo tàng Bến Tre</a></li>
+            <li><a href="#section4">4. Lịch sử của bảo tàng Bến Tre </a></li>
+            <li><a href="#section5">5. Bảo tàng Bến Tre có gì? </a></li>
+        </ul>
+    </div>
+    <button id="scrollToTopBtn" title="Lên đầu trang">↑</button>
+
+    <!-- Nội dung các phần giữ nguyên -->
+    <div id="section1" class="content-section">
+        <h2>1. Đôi nét giới thiệu về bảo tàng Bến Tre</h2>
+        <p>Bảo tàng Bến Tre nổi tiếng với vai trò giữ gìn và trưng bày các hiện vật, tranh ảnh về lịch sử tự nhiên và xã hội, phục vụ cho nhu cầu nghiên cứu, giáo dục, tham quan và tận hưởng văn hóa. Do đó, khi khám phá một vùng đất mới, các du khách thường chọn nơi này làm điểm đến đầu tiên. Bảo tàng Bến Tre không chỉ là một trong những điểm tham quan quan trọng, mà còn là biểu tượng của vẻ đẹp văn hóa - lịch sử đặc sắc của miền quê sông nước. Cùng với các điểm tham quan như Di tích Cây Da đôi, Làng nghề bánh tráng Mỹ Lồng, Đền thờ Trung tướng Đồng Văn Cống,... đây là những địa điểm không thể bỏ qua trong chuyến du lịch thú vị của bạn.</p>
+        <img src="img/bt1.jpg" alt="Khu du lịch Lan Vương">
+        <p>
+            Bảo tàng Bến Tre nằm bên bờ sông Bến Tre hiền hòa, tại số 146 đường Hùng Vương, P. 3, TP. Bến Tre. Mặt chính của bảo tàng hướng về phía sông Bến Tre với khuôn viên rộng lớn có nhiều cây xanh tạo bóng mát và hoa kiểng sắc nét, tạo nên một không gian thơ mộng và dễ chịu. Mặt sau của bảo tàng hướng về đường Cách mạng tháng Tám, một trong những con đường sầm uất nhất của thành phố. Vị trí này thuận tiện cho việc di chuyển và thu hút du khách đến thăm quan.</p>
+        <img src="img/bt2.jpg" alt="Khu du lịch Lan Vương">
+    </div>
+
+    <div id="section2" class="content-section">
+        <h2>2. Cách di chuyển đến bảo tàng Bến Tre</h2>
+        <p>Bảo tàng Bến Tre tọa lạc trên con đường Hùng Vương, một trong những con đường sầm uất nhất của thành phố, với mặt chính hướng ra sông và phía sau giáp đường Cách Mạng Tháng 8. Nơi đây được bao quanh bởi khuôn viên xanh mát với nhiều cây cổ thụ và hoa kiểng tươi tốt và được bảo vệ bởi dãy hàng rào khang trang.</p>
+        <p>Ngoài việc sở hữu vị trí đẹp và thuận lợi, cung đường đến Bảo tàng Bến Tre cũng rất dễ dàng. Từ trung tâm thành phố, bạn chỉ cần đi hết đường 30 Tháng 4 rồi rẽ phải vào Hùng Vương. Điểm đến của bạn sẽ nằm ở số 146, cách Bến tàu Hùng Vương chưa đến 200m. Nếu đây là lần đầu bạn đến thăm, sau khi đến trung tâm thành phố, bạn có thể sử dụng dịch vụ bus hoặc taxi Bến Tre để đến trực tiếp bảo tàng và tránh bị lạc. Xe máy, ô tô tự lái hoặc phương tiện cá nhân khác sẽ là lựa chọn lý tưởng hơn cho những du khách đã có kinh nghiệm khám phá xứ dừa.</p>
+        <img src="img/bt3.jpg" alt="Mùa trái cây">
+        <p><a href="https://maps.app.goo.gl/EfGuPpNrQgN1HR4T9">Xem ngay bản đồ đến bảo tàng Bến Tre</a></p>
+    </div>
+
+    <div id="section3" class="content-section">
+        <h2>3. Giá vé của bảo tàng Bến Tre</h2>
+        <p>Địa chỉ: Số 146, Đ Hùng Vương, P. An Hội, Bến Tre.</p>
+        <p>Giờ mở cửa: 7h00 - 17h00 các ngày trong tuần.</p>
+        <p>Giá vé:</p>
+        <p>- Người lớn: 50.000 VNĐ/khách. </p>
+        <p> - Trẻ em cao trên 1m2: 20.000 VNĐ/khác.h </p>
+        <p>- Trẻ em cao dưới 1m2: Miễn phí.</p>
+        <img src="img/bt4.jpg" alt="Mùa trái cây">
+    </div>
+    <div id="section4" class="content-section">
+        <h2>4. Lịch sử của bảo tàng Bến Tre</h2>
+        <p>Bảo tàng Bến Tre được thành lập vào năm 1981 với diện tích lên đến 20.000m2. Ban đầu, địa điểm này được xây dựng như là Dinh Tham biện, nhờ vị trí lân cận với 3 con đường lớn và thuận lợi: Hùng Vương, Lê Đại Hành và Cách Mạng Tháng 8. Sau khi Hiệp định Geneva được ký kết vào ngày 20/7/1954, chế độ độc tài của Ngô Đình Diệm được thiết lập ở miền Nam Việt Nam, biến ngôi nhà này thành Dinh Tỉnh trưởng.</p>
+        <p>Khi miền Nam giải phóng hoàn toàn và đất nước được thống nhất, bảo tàng đã được Tỉnh ủy Bến Tre tiếp quản và chính thức giao cho Bộ Văn hóa Thông tin ( hiện nay gọi là Sở Văn hóa, Thể thao và Du lịch) để xây dựng và bảo tồn. Vào ngày 26/10/1981, theo quyết định số 1564 của chính quyền, công trình được giao lại cho dự án bảo tàng để bảo quản và trưng bày các hình ảnh và hiện vật còn lại từ 2 cuộc kháng chiến chống thực dân Pháp và đế quốc Mỹ xâm lược.</p>
+        <p>Quá trình hình thành và phát triển của bảo tàng liên quan chặt chẽ đến những sự kiện lịch sử quan trọng của người dân Bến Tre. Nó là nơi in ấn tài liệu bí mật nội tuyến vào năm 1938, dưới sự chỉ đạo của Bí thư Tỉnh ủy Phạm Thái Bường và là địa điểm diễn ra lễ ký quyết định thành lập công binh giới của lãnh đạo Tỉnh ủy vào tháng 10/1945. Ngoài ra, bảo tàng còn là nơi hoạt động của chiến sĩ tình báo Phạm Ngọc Thảo với vai trò Đại tá Tỉnh trưởng Kiến Hòa trong giai đoạn từ 1960 đến 1962.</p>
+        <img src="img/bt5.jpeg" alt="Mùa trái cây">
+    </div>
+    <div id="section5" class="content-section">
+        <h2>5. Bảo tàng Bến Tre có gì?</h2>
+       <p>Khi thăm bảo tàng Bến Tre, bạn sẽ được khám phá và tìm hiểu về nhiều điểm quan trọng trong quần thể này như Di tích quốc gia "Nơi ở và hoạt động của vị Đại tá Phạm Ngọc Thảo", Nhà dừa, Nhà trưng bày Thành tựu Kinh tế - Xã hội của tỉnh và Khu trưng bày ngoài trời. Mỗi phần của Bảo tàng mang đến những thông tin lịch sử và văn hóa đặc biệt khác nhau.</p>
+       <p>Di tích quốc gia "Nơi ở và hoạt động của vị Đại tá Phạm Ngọc Thảo" được xây dựng theo kiến trúc Pháp, mang đậm vẻ trang nghiêm và cổ kính. Đây là nơi trưng bày những hình ảnh và hiện vật kể về lịch sử và truyền thống cách mạng của dân Bến Tre trong hai cuộc kháng chiến chống Pháp và Mỹ. Tại đây, bạn cũng có thể tìm hiểu về cuộc đời và công việc của Đại tá Phạm Ngọc Thảo.</p>
+       <p>Nhà trưng bày Thành tựu Kinh tế - Xã hội của tỉnh sẽ giúp bạn hiểu rõ hơn về quá trình phát triển của Bến Tre từ năm 1976 đến nay, qua những hiện vật và hình ảnh minh họa về kinh tế, văn hóa, và xã hội của tỉnh</p>
+       <p>Nhà dừa với thiết kế nhẹ nhàng, đậm chất dân tộc sẽ mang đến cho bạn trải nghiệm gần gũi hơn về đời sống văn hóa và sinh hoạt của người dân Bến Tre.</p>
+      <p>Khu trưng bày ngoài trời bao gồm nhiều hiện vật lớn như xác máy bay, pháo, vỏ bom thu thập trong chiến tranh, kèm theo các tiểu cảnh như ruộng lúa, con trâu, hồ sen, cầu dừa... Tất cả này tạo ra một không gian gần gũi và thân thiện, cũng như là nơi lý tưởng để chụp ảnh với những background đầy ấn tượng.</p>
+      <img src="img/bt6.jpg" alt="Mùa trái cây">
+      <p>Bảo tàng Bến Tre là một điểm đến du lịch đặc biệt mà bạn không nên bỏ lỡ khi khám phá vùng đất miền Tây sông nước này. Hãy ghi lại thông tin của nơi này vào sổ tay du lịch của bạn để tham khảo khi cần.</p>
+    </div>
+    <div class="review-section">
+        <h2>Hãy chia sẻ cảm nhận của bạn khi tới bảo tàng Bến Tre</h2>
+        <div id="rating">
+                <span class="star" data-value="1">★</span>
+                <span class="star" data-value="2">★</span>
+                <span class="star" data-value="3">★</span>
+                <span class="star" data-value="4">★</span>
+                <span class="star" data-value="5">★</span>
+             </div>
+                <textarea id="comment" placeholder="Chia sẻ cảm nhận của bạn..."></textarea>
+                <button id="submit-btn">Gửi cảm nhận</button>
+             <div id="reviews">
+                <h3>Các cảm nhận</h3>
+             </div>
+
+            
+            </div>
+        </div>
+    </div>
+ 
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const stars = document.querySelectorAll('.star'); // Chọn tất cả các sao
+    const commentBox = document.getElementById('comment'); // Textarea bình luận
+    const submitBtn = document.getElementById('submit-btn'); // Nút gửi đánh giá
+    const reviewsContainer = document.getElementById('reviews'); // Khu vực hiển thị đánh giá
+    let selectedRating = 0; // Giá trị sao được chọn (mặc định là 0)
+
+    // Lấy dữ liệu đã lưu từ localStorage và hiển thị cho trang hiện tại
+    loadCommentsForCurrentPage();
+
+    // Xử lý chọn sao
+    stars.forEach((star) => {
+        star.addEventListener('click', () => {
+            selectedRating = parseInt(star.getAttribute('data-value')); // Lấy giá trị sao
+            stars.forEach((s) => s.classList.remove('selected')); // Bỏ chọn tất cả sao
+            for (let i = 0; i < selectedRating; i++) {
+                stars[i].classList.add('selected'); // Chọn sao từ 1 đến sao được chọn
+            }
+        });
+    });
+
+    // Xử lý khi nhấn nút Gửi đánh giá
+    submitBtn.addEventListener('click', () => {
+        const comment = commentBox.value.trim(); // Lấy nội dung bình luận, loại bỏ khoảng trắng
+
+        // Kiểm tra nếu chưa chọn sao
+        if (!selectedRating) {
+            alert('Vui lòng chọn số sao!');
+            return;
+        }
+
+        // Kiểm tra nếu bình luận rỗng
+        if (!comment) {
+            alert('Vui lòng nhập bình luận!');
+            return;
+        }
+
+        // Tạo đối tượng đánh giá
+        const newReview = {
+            stars: selectedRating,
+            comment: comment,
+            pageId: window.location.pathname,  // Lưu URL của trang hiện tại
+        };
+
+        // Lưu đánh giá vào localStorage
+        saveComment(newReview);
+
+        // Thêm đánh giá vào giao diện
+        addReviewToDOM(newReview);
+
+        // Xóa dữ liệu form
+        selectedRating = 0; // Reset số sao
+        stars.forEach((s) => s.classList.remove('selected')); // Bỏ chọn tất cả sao
+        commentBox.value = ''; // Xóa nội dung bình luận
+    });
+
+    // Hàm thêm đánh giá vào giao diện
+    function addReviewToDOM(review) {
+        const reviewItem = document.createElement('div');
+        reviewItem.classList.add('review-item');
+
+        const maxChars = 20; // Số ký tự tối đa hiển thị ban đầu
+        const isLongComment = review.comment.length > maxChars; // Kiểm tra xem bình luận có dài hơn giới hạn không
+        const shortComment = review.comment.substring(0, maxChars) + (isLongComment ? '...' : '');
+
+        reviewItem.innerHTML = `
+            <div class="stars">${'★'.repeat(review.stars)}${'☆'.repeat(5 - review.stars)}</div>
+            <p class="comment">
+                <span class="short">${shortComment}</span>
+                <span class="full" style="display: none;">${review.comment}</span>
+            </p>
+            ${isLongComment ? '<button class="toggle-btn">Xem thêm</button>' : ''}
+        `;
+
+        reviewsContainer.appendChild(reviewItem);
+
+        // Xử lý nút "Xem thêm" hoặc "Thu gọn"
+        if (isLongComment) {
+            const toggleBtn = reviewItem.querySelector('.toggle-btn');
+            const shortText = reviewItem.querySelector('.short');
+            const fullText = reviewItem.querySelector('.full');
+
+            toggleBtn.addEventListener('click', () => {
+                const isExpanded = fullText.style.display === 'inline';
+                shortText.style.display = isExpanded ? 'inline' : 'none';
+                fullText.style.display = isExpanded ? 'none' : 'inline';
+                toggleBtn.textContent = isExpanded ? 'Xem thêm' : 'Thu gọn';
+            });
+        }
+    }
+
+    // Lấy và hiển thị các bình luận cho trang hiện tại
+    function loadCommentsForCurrentPage() {
+        const url = window.location.pathname; // Lấy URL hiện tại
+        const storedComments = JSON.parse(localStorage.getItem('comments')) || [];
+        const commentsForPage = storedComments.filter(comment => comment.pageId === url); // Lọc bình luận theo trang hiện tại
+
+        commentsForPage.forEach(comment => addReviewToDOM(comment)); // Hiển thị bình luận cho trang hiện tại
+    }
+
+    // Lưu bình luận vào localStorage với URL trang
+    function saveComment(comment) {
+        const storedComments = JSON.parse(localStorage.getItem('comments')) || [];
+        storedComments.push(comment); // Thêm bình luận vào mảng
+        localStorage.setItem('comments', JSON.stringify(storedComments)); // Lưu lại vào localStorage
+    }
+});
+
+// Nút cuộn lên đầu trang
+const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+// Hiển thị nút khi bắt đầu cuộn
+window.onscroll = function () {
+    if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
+        scrollToTopBtn.style.display = "block"; // Hiển thị nút
+    } else {
+        scrollToTopBtn.style.display = "none"; // Ẩn nút
+    }
+};
+
+// Khi nhấn vào nút, cuộn lên đầu trang
+scrollToTopBtn.onclick = function () {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+};
+
+
+
+</script>
+</body>
+  
+</html>

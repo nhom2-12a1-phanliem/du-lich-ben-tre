@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Điểm tham quan nổi bật ở Bến Tre</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+    .navbar-logo{
+        position: fixed; 
+        z-index: 1000;
+        margin-left: 110px;
+    }
+         h1 {
+            top:2px;
+            position: fixed; 
+            font-size: 30px;
+            letter-spacing: 3px;
+            -webkit-box-reflect: below 1px linear-gradient(transparent, transparent, rgba(0, 0, 0, 0.3));
+            outline: none;
+            animation: animation 5s infinite ease-in-out;
+            z-index: 1000;
+            padding: 10px; 
+            padding-left: 120px;
+        }
+ @keyframes animation{
+    0%, 18%, 21%, 50.3%, 60%, 64.5%, 82%, 90.3%, 94%
+     {color: #333030;
+    text-shadow: none;
+  }
+  17.9%, 21.4%, 31%, 52%, 66%, 80.5%, 89.6%, 92.2%, 100% 
+    {color: #fff;
+    text-shadow: 
+      0 0 10px #5df358,
+      0 0 20px #5df358,
+      0 0 40px #5df358,
+      0 0 80px #5df358,
+      0 0 160px #5df358;
+        }
+    }
+        </style>
+</head>
+<body>
+    <nav class="navbar">
+    <div class="navbar-container">
+        <div class="navbar-logo">
+            <img src="img/logo.png" alt="Logo" width="100" height="100"><span class="logo-text"> 
+                <h1> Điểm tham quan nổi bật ở Bến Tre </h1> 
+            </h1>
+        </span>
+        </div>
+    <div class="navbar-menu">
+        <a href="index.html">Trang Chủ</a>
+        <a href="tour.html">Gợi ý tour 1-4 ngày</a>
+        
+    </div>    
+    <div class="container">
+        <div id="slide">
+            <div class="item" style="background-image: url(img/1.jpg);">
+                <div class="content">
+                    <div class="name">Khu du lịch Lan Vương </div>
+                    <div class="des"><strong>Địa điểm không thể bỏ qua khi đến tỉnh Bến Tre</strong></div>
+                    <a href="lanvuong.html" class="custom-link"> Xem chi tiết </a>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(img/4.jpg);">
+                <div class="content">
+                    <div class="name">Bảo tàng tỉnh Bến Tre</div>
+                    <div class="des"><strong>Nơi chứa đựng những giá trị lịch sử của nhân dân Bến Tre mà bạn không thể bỏ qua</strong></div>
+                    <a href="baotang.html" class="custom-link"> Xem chi tiết </a>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(img/3.jpg);">
+                <div class="content">
+                    <div class="name">Khu di tích và lăng mộ cụ Nguyễn Đình Chiểu  </div>
+                    <div class="des"><strong>Điểm đến không thể bỏ qua khi đến huyện Ba Tri,tỉnh Bến Tre</strong></div>
+                    <a href="ndc.html" class="custom-link"> Xem chi tiết </a>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(img/2.jpg);">
+                <div class="content">
+                    <div class="name">Chùa Vạn Phước Phước</div>
+                    <div class="des"><strong>Ngôi chùa lớn nhất mà bạn không thể bỏ lỡ khi đến Bến Tre</strong></div>
+                    <a href="cvp.html" class="custom-link"> Xem chi tiết </a>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(img/5.jpg);">
+                <div class="content">
+                    <div class="name">Nông trại Hải Vân sân chim Vàm Hồ</div>
+                    <div class="des"><strong>Khu bảo tồn chim mà bạn nên ghé đến một lần khi đến Bến Tre</strong></div>
+                    <a href="vh.html" class="custom-link"> Xem chi tiết </a>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(img/6.jpg);">
+                <div class="content">
+                    <div class="name">Khu di tích Đồng Khởi Bến Tre</div>
+                    <div class="des"><strong>Khu di tích Đồng Khởi Bến Tre là nơi ghi dấu lịch sử cách mạng hào hùng của dân tộc ta trong những năm kháng chiến chống Pháp, Mỹ. Bạn nên đến thăm khi đến Bến Tre</strong></div>
+                    <a href="dk.html" class="custom-link"> Xem chi tiết </a>
+                </div>
+            </div>
+        </div>
+        <div class="buttons">
+            <button id="prev"><i class="fa-solid fa-angle-left"></i></button>
+            <button id="next"><i class="fa-solid fa-angle-right"></i></button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

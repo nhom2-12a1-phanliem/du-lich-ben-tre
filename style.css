@@ -1,0 +1,210 @@
+
+body {
+    background-color: #eaeaea;
+    overflow: hidden;
+    background-image: url('your-background-image.jpg'); /* Đảm bảo ảnh nền có kích thước nhỏ và chất lượng tốt */
+    background-size: cover; /* Giữ nguyên hiệu ứng cover */
+    background-position: center center;
+    background-attachment: fixed; /* Có thể bỏ dòng này nếu gây ảnh hưởng đến hiệu suất trên di động */
+    font-family: 'Arial', sans-serif;
+    text-rendering: optimizeLegibility; /* Cải thiện hiệu suất hiển thị văn bản */
+}
+
+.container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 1000px;
+    height: 600px;
+    padding: 50px;
+    background-color: #f5f5f5;
+    box-shadow: 0 30px 50px #dbdbdb;
+    display: flex;
+    justify-content: space-between;
+    will-change: transform; /* Tối ưu hiệu suất */
+}
+
+#slide {
+    width: max-content;
+    margin-top: 50px;
+}
+
+.item {
+    width: 200px;
+    height: 300px;
+    background-position: 50% 50%;
+    display: inline-block;
+    transition: transform 0.5s ease, opacity 0.5s ease; /* Giữ các hiệu ứng cần thiết */
+    background-size: cover;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    transform: translate(0, -50%); /* Sử dụng transform thay vì left/top */
+    border-radius: 20px;
+    box-shadow: 0 30px 50px #505050;
+    will-change: transform, opacity; /* Tối ưu hóa hiệu suất cho các phần tử động */
+}
+
+.item:nth-child(1),
+.item:nth-child(2) {
+    left: 0;
+    top: 0;
+    transform: translate(0, 0);
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: none;
+}
+
+.item:nth-child(3) {
+    left: 50%;
+}
+
+.item:nth-child(4) {
+    left: calc(50% + 220px);
+}
+
+.item:nth-child(5) {
+    left: calc(50% + 440px);
+}
+
+.item:nth-child(n+6) {
+    left: calc(50% + 660px);
+    opacity: 0;
+}
+
+.item .content {
+    position: absolute;
+    top: 50%;
+    left: 100px;
+    width: 300px;
+    text-align: left;
+    padding: 0;
+    color: #000c09;
+    transform: translate(0, -50%);
+    display: none;
+    font-family: Times New Roman;
+    background-color: white;
+    border: 2px solid rgb(75, 30, 30);
+    border-radius: 20px;
+    padding: 10px 20px;
+}
+
+.item:nth-child(2) .content {
+    display: block;
+    z-index: 11111;
+}
+
+.item .name {
+    font-size: 40px;
+    font-weight: bold;
+    opacity: 0;
+    animation: showcontent 1s ease-in-out 1 forwards;
+}
+
+.item .des {
+    margin: 20px 0;
+    opacity: 0;
+    animation: showcontent 1s ease-in-out 0.3s 1 forwards;
+}
+
+.item button {
+    padding: 10px 20px;
+    border: none;
+    opacity: 0;
+    animation: showcontent 1s ease-in-out 0.6s 1 forwards;
+    transition: all 0.3s ease;
+    margin: 0 10px;
+    background-color: #030f07;
+    border: 2px solid rgb(12, 2, 2);
+    border-radius: 8px;
+}
+
+@keyframes showcontent {
+    from {
+        opacity: 0;
+        transform: translate(0, 100px);
+        filter: blur(33px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0, 0);
+        filter: blur(0);
+    }
+}
+
+.buttons {
+    position: absolute;
+    bottom: 30px;
+    z-index: 222222;
+    text-align: center;
+    width: 100%;
+}
+
+.buttons button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid #555;
+    transition: 0.5s;
+}
+
+.buttons button:hover {
+    background-color: #bac383;
+}
+
+.navbar-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 89%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 0px;
+    z-index: 1000;
+    margin-top: 20px;
+}
+
+.navbar-menu a {
+    color: rgb(12, 30, 34);
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+    margin: 0 10px;
+    background-color: #a7eebc;
+    border: 2px solid white;
+    border-radius: 8px;
+}
+
+.navbar-menu a:hover {
+    background-color: #a0f1a7;
+    border-color: #0fc727;
+    box-shadow: 0 0 10px rgba(28, 204, 43, 0.7);
+    animation: shake 0.5s;
+}
+
+.custom-link {
+    display: inline-block;
+    background-color: #e0ebd7;
+    color: #140707;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.custom-link:hover {
+    background-color: #a5e45e;
+    color: #000;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.animate {
+    will-change: transform;
+}

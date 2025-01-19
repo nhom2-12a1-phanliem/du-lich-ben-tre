@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chùa Vạn Phước</title>
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f4f6;
+            color: #2c3e50;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+        .navbar-menu {
+            display: flex;
+            justify-content: flex-end;
+            padding: 15px 0;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #ddd;
+        }
+        .navbar-menu a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            background-color: #28a745;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+        .navbar-menu a:hover {
+            background-color: #218838;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .muc-luc {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        .muc-luc h3 {
+            margin-top: 0;
+            color: #17a2b8;
+        }
+        .muc-luc ul {
+            list-style: none;
+            padding: 0;
+        }
+        .muc-luc li {
+            margin: 8px 0;
+        }
+        .muc-luc li a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        .muc-luc li a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+        .content-section {
+            margin-bottom: 40px;
+        }
+        .content-section h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        .content-section img {
+            display: block;
+            margin: 15px 0;
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+        th, td {
+            text-align: left;
+            padding: 12px;
+            font-size: 15px;
+        }
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        th {
+            background-color: #28a745;
+            color: white;
+        }
+        a {
+            color: #007bff;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        h1 {
+            text-align: center;
+            color: #333333;
+            font-size: 2.2em;
+            margin-bottom: 20px;
+        }
+        p {
+            margin: 10px 0;
+        }
+        li {
+            line-height: 1.6;
+        }
+        .review-section {
+  background: #fff;
+  padding: 100px;
+  border-radius: 8px;
+  max-width: 500px;
+  margin: 0 auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.review-section {
+  background: #fff;
+  padding: 100px;
+  border-radius: 8px;
+  max-width: 500px;
+  margin: 0 auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.rating {
+  display: flex;
+  justify-content: flex-start;
+  gap: 5px;
+  margin-bottom: 15px;
+}
+
+.star {
+  font-size: 25px;
+  cursor: pointer;
+  color: #ccc;
+  transition: color 0.3s;
+}
+
+.star:hover,
+.star.selected {
+  color: #f39c12;
+}
+
+textarea {
+  width: 100%;
+  height: 80px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  padding: 10px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+#reviews {
+  margin-top: 20px;
+}
+
+.review-item {
+  margin-bottom: 15px;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.review-item .stars {
+  color: #f39c12;
+}
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    background-color: #71f371;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display: none; /* Ẩn nút mặc định */
+}
+
+#scrollToTopBtn:hover {
+    background-color: #5af58d;
+}
+h2{
+color:#070101;
+}
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="navbar-menu">
+        <a href="index.html">Trang Chủ</a>
+        <a href="tel:+0947827575">Liên Hệ</a>
+        <a href="https://www.facebook.com/share/1A1yF18aoc/">Fanpage</a>
+        <a href="mailto:vanphuoc.net@gmail.com">Email</a>
+    </div>
+
+    <h1>Chùa Vạn Phước - “Tiên cảnh” lớn nhất tại xứ dừa Bến Tre</h1>
+    <p>Chùa Vạn Phước ở Bến Tre là một điểm đến tâm linh đông khách nhất hiện nay ở xứ dừa Bến Tre, rất nhiều du khách đã đến hành hương và tham quan Chùa Vạn Phước mỗi khi đi du lịch Bến Tre, đặc biệt là vào những ngày cuối tuần hoặc ngày lễ.</p>
+
+        <p>Chùa Vạn Phước là một trong những ngôi chùa lớn nhất của tỉnh Bến Tre, với khuôn viên rộng và kiến ​​trúc độc đáo lôi cuốn du khách, đến với Chùa Vạn Phước bạn sẽ được tận hưởng khung cảnh như chốn thần tiên giữa đầm lầy và những cánh đồng hoa dại khô cằn càng làm nổi bật lên viên ngọc vàng quý giá.</p>
+
+    <div class="muc-luc">
+        <h3>Mục lục</h3>
+        <ul>
+            <li><a href="#section1">1. Đôi nét về Chùa Vạn Phước</a></li>
+            <li><a href="#section2">2. Kiến trúc đặc sắc</a></li>
+            <li><a href="#section3">3. Thông tin về giá vé và đường đi đến chùa Vạn Phước.</a></li>
+            <li><a href="#section4">4. Một số lưu ý quan trọng cần biết khi tham quan chùa Vạn Phước</a></li>
+        </ul>
+    </div>
+    <button id="scrollToTopBtn" title="Lên đầu trang">↑</button>
+
+    <!-- Nội dung các phần giữ nguyên -->
+    <div id="section1" class="content-section">
+        <h2>1. Đôi nét về Chùa Vạn Phước</h2>
+        <p>Chùa Vạn Phước nằm tại ấp Bình Chiến, huyện Bình Đại tỉnh Bến Tre. Tọa lạc trên một khu đất rộng 12ha, chùa Vạn Phước được xem như là một trong những ngôi chùa lớn nhất Bến Tre. Nơi đây sở hữu khuôn viên cực kỳ rộng và thoáng đãng với hàng ngàn loại cây chen nhau kết hoa trái quanh năm. Bước vào khuôn viên của ngôi chùa này, bạn sẽ đắm chìm vào sự mát lành, thơm thoang thoảng mùi cỏ dại của của chốn đồng quê. </p>
+        <img src="img/vp1.webp" alt="Mùa trái cây">
+       <p>Chùa Vạn Phước xuất hiện như một viên ngọc quý tỏa sáng lấp lánh giữ những khu rừng già xơ xác không ai quan tâm đến. Giữa một vùng trũng đầm lầy hôi tanh mùi bùn, giữa vùng đất lấp đầy những ngọn cỏ dại cao ngang đầu, lại có một viên ngọc lấp lánh với những công trình kiến trúc, những cảnh đẹp không ngờ. Từ khi khánh thành địa điểm du lịch này, đã có rất nhiều khách du lịch ghé thăm và chiêm bái tượng phật khổng lồ tại đây. </p>
+        
+    </div>
+
+    <div id="section2" class="content-section">
+        <h2>2. Kiến Trúc đặc sắc</h2>
+        <h3>2.1 Cổng Tam Quan</h3>
+        <p>Giống với các kiến trúc cổng Tam Quan khác, cổng Tam Quan tại chùa Vạn Phước cũng bao gồm 3 lối đi được dựng từ 4 cột trụ. Tuy nhiên cổng Tam Quan của chùa Vạn Phước lại vô cùng nổi bật với ánh vàng rực rỡ giữa một vùng cỏ dại hoang vu. Không những vậy, cổng chùa cũng không được lợp mái ngói đỏ mà đổi lại được dựng 2 cột tháp cao như một tòa bảo tháp phiên bản nhỏ. Chiếc cổng Tam Quan rực sáng thu hút ánh nhìn của người qua kẻ lại khi ghé đến huyện Bình Đại này. Mỗi khi ánh hoàng hôn dần buông xuống, từng tia nắng vàng chiếu rọi qua lớp sơn vàng óng ánh của cổng Tam Quan chùa Vạn Phước, làm cho ngôi chùa như đang phát sáng. Thật không ngoa với cái danh “tiên cảnh” xứ dừa Bến Tre.</p>
+        <img src="img/vp2.jpg" alt="Mùa trái cây">
+        <h3>2.2 Chánh điện chùa Vạn Phước </h3>
+       <p>Chánh điện của Chùa Vạn Phước chính là trái tim của nơi linh thiêng này, là nơi tập trung hoạt động tâm linh và lễ nghi. Kiến trúc của Chánh điện được thiết kế tỉ mỉ, phản ánh được sự trang nghiêm và uy nghi của Phật giáo. Ở khu vực bên ngoài Chánh điện có cấu trúc vững chãi, với các mái chùa cong và đường nét thanh tao, tạo ra một hình ảnh trang nghiêm và đồng thời tôn vinh vẻ đẹp của kiến trúc truyền thống. Khu vực bên trongPHƯỚC tượng Phật và các họa tiết được được chăm chút và trang trí một cách tỉ mỉ, tạo nên không gian linh thiêng và yên bình, thích hợp cho việc cầu nguyện và thiền định. </p>
+        <img src="img/vp3.jpeg" alt="Mùa trái cây">
+        <p>Phía bên trong khu vực chánh điện sẽ thờ ba vị Phật đồng nhất nhau. Không chỉ vậy, bên trong chánh điện còn bày trí tượng Phật Bổn Sư Thích Ca, tượng Phật A Di Đà. Để tô điểm thêm phần nguy nga tráng lệ, xung quanh chánh điện được bày trí các bức tượng có chạm khắc các vị La Hán thuộc hàng đại để tử loại giỏi của đức Phật. </p>
+        <p>Phía bên phải của chánh điện là một chánh điện khắc. Tại chánh điện này có thờ các vị Bồ Tát Nghìn Tay Nghìn Mắt, phía xa xa là tổ sư Đạt Ma, là vị sư truyền giáo Phật Giáo vào Việt Nam. Cũng giống với chánh điện, để tô điểm thêm vẻ tráng lệ, xung quanh cũng có những bức tường chạm khắc về cuộc đời của đức Phật. Không gian tại chánh điện vôc ùng uy nghiêm và thanh tịnh. </p>
+        <h3>2.3 Tượng Phật Di Lặc </h3>
+        <p>Điều đặc biệt tại chùa Vạn Phước chính là bức tượng Phật Di Lặc vô cùng to lớn và nổi tiếng tại đây. Bức tượng Phật Di Lặc được chạm khắc vô cùng tinh xảo và tỉ mỉ với kích thước cực kỳ khổng lồ. Được biết, bức tượng có khối lượng lên đến 99 tấn với chiều cao là 12m45 và được làm từ bê tông cốt thép mạ vàng với trị giá được ước tính là 2,27 tỷ đồng. 
+            Bức tượng được chạm khắc hình tượng Phật Di Lặc, với khuôn mặt hiền từ, ý nghĩa của bức tượng chính là muốn cổ vũ mọi người sống tích cực hằng ngày và bỏ qua những chuyện làm mình đau khổ, luôn mỉm cười hướng về tương lai phía trước. Toàn bộ bức tượng tại chùa Vạn Phước được mạ vàng óng ánh, với kích thước to lớn bức tượng dễ dàng đón nhận những tia nắng chói chang của mặt trời. Khi ánh nắng buông xuống, bức tượng Phật Di Lặc như đang phát sáng và chiếu rọi xuống nhân gian. </p>
+            <img src="img/vp4.jpg" alt="Mùa trái cây">
+        </div>
+
+    <div id="section3" class="content-section">
+        <h2>3. Thông tin về giá vé và đường đi đến chùa Vạn Phước  </h2>
+        <p><strong>Địa chỉ: </strong>QL57B, Ấp Bình Chiến, Bình Đại, Bến Tre.</p>
+        <p><strong>Giá vé: </strong>miễn phí.</p>
+        <p><strong>Giờ mở cửa:</strong> 6:30 - 20:00 hằng ngày.</p>
+        <h3>Hướng dẫn đường đi</h3>
+        <p>Chùa Vạn Phước cách trung tâm thành phố Bến Tre khoảng chừng 4km. Nếu bạn muốn di chuyển đến nay có thể đi bằng xe máy hoặc ô tô. Bên cạnh đó, ngôi chùa này cũng cách khu du lịch biển Thừa Đức khoảng chừng 2km. Chùa Vạn Phước với màu vàng sáng rực rỡ cả một vùng Bình Đại ven biển. </p>
+        <p>Nếu xuất phát từ thành phố Hồ Chí Minh, bạn có thể bắt chuyến xe khách hoặc đi xe máy về huyện Bình Đại theo cung đường sau. Bạn đi theo cung đường cao tốc Bắc - Nam, đến nút giao Thân Cửu Nghĩa, bạn rẽ trái vào cao tốc thành phố Hồ Chí Minh - Trung Lương. Đến đoạn ngã tư giao với Quốc lộ 1A, bạn rẽ phải vào đường QL 1A, di chuyển thêm hơn 4km bạn sẽ gặp bùng binh vào lối rẽ vào Ấp Bắc. Sau đó tại ngã tư giao với Ql 60 bạn rẽ phải, tiếp tục đi theo cung đường QL 60. Tại Ngã tư An Khánh bạn rẽ trái vào huyện Châu Thành. Gặp bùng binh bạn chọn rẽ vào lối thứ 3, sau đó di chuyển thêm 5,4km bạn sẽ gặp thêm 1 bùng binh nữa vào chọn rẽ vào lối thứ 1. Tiếp tục di chuyển thêm 5,6km bạn sẽ gặp được cổng chùa vàng rực của chùa Vạn Phước. </p>
+
+      <img src="img/vp5.jpg" alt="Mùa trái cây">
+      <p><a href="https://maps.app.goo.gl/qx3BeCgwNqMcNSjy8">Xem đường đi tại đây</a></p> 
+        </div>
+  
+        <div id="section4" class="content-section">
+            <h2>4. Một số lưu ý quan trọng cần biết khi tham quan chùa Vạn Phước</h2>
+            <li>Mặc trang phục kín đáo và lịch sự, tránh mặc quần áo quá gợi cảm hoặc quá ngắn tại khu vực tâm linh thờ cúng.</li>
+            <li>Giữ im lặng, tránh gây ồn ào hoặc hành động không tôn trọng khi vào các khu vực linh thiêng như Chánh điện, Nhà thờ tự Phật.</li>
+            <li>Tuân theo hướng dẫn của nhân viên chùa và biểu hiện lòng tôn trọng khi gặp các linh mục hoặc nhà sư.</li>
+            <li>Giữ vệ sinh cá nhân và không để rác thải, đảm bảo không gian chùa luôn sạch sẽ và trang trọng.</li>
+            <li>Tránh hút thuốc, uống rượu hoặc thực hiện các hành vi không tôn trọng văn hóa tôn giáo.</li>
+            <li>Hỏi ý kiến trước khi chụp ảnh hoặc quay video trong các khu vực linh thiêng và tuân theo quy định của chùa.</li>
+            <li>Nếu muốn, bạn có thể mang theo những tặng phẩm như hoa, nến, vàng mã, hoặc các vật phẩm khác để dâng lên trong các nghi lễ và tôn trọng truyền thống tín ngưỡng của địa phương.</li>
+            <li>Nếu có cơ hội, hãy tìm hiểu thêm về lịch sử, văn hóa và truyền thống Phật giáo tại địa phương để có trải nghiệm sâu sắc hơn khi thăm chùa Vạn Phước.</li>
+        </div>        
+    <div class="review-section">
+        <h2>Hãy chia sẻ cảm nhận của bạn khi đến chùa Vạn PhướcPhước</h2>
+            <div class="rating">
+              <span class="star" data-value="1">★</span>
+              <span class="star" data-value="2">★</span>
+              <span class="star" data-value="3">★</span>
+              <span class="star" data-value="4">★</span>
+              <span class="star" data-value="5">★</span>
+            </div>
+            <textarea id="comment" placeholder="Viết cảm nhận của bạn tại đây..."></textarea>
+            <button id="submit-btn">Gửi cảm nhận</button>
+        
+            <!-- Hiển thị đánh giá -->
+            <div id="reviews">
+              <h3>Các cảm nhận:</h3>
+            </div>
+          </div>
+    </div>
+     </div>
+     </div>
+</div>
+ <script>
+ document.addEventListener('DOMContentLoaded', () => {
+    const stars = document.querySelectorAll('.star'); // Chọn tất cả các sao
+    const commentBox = document.getElementById('comment'); // Textarea bình luận
+    const submitBtn = document.getElementById('submit-btn'); // Nút gửi đánh giá
+    const reviewsContainer = document.getElementById('reviews'); // Khu vực hiển thị đánh giá
+    let selectedRating = 0; // Giá trị sao được chọn (mặc định là 0)
+
+    // Lấy dữ liệu đã lưu từ localStorage và hiển thị cho trang hiện tại
+    loadCommentsForCurrentPage();
+
+    // Xử lý chọn sao
+    stars.forEach((star) => {
+        star.addEventListener('click', () => {
+            selectedRating = parseInt(star.getAttribute('data-value')); // Lấy giá trị sao
+            stars.forEach((s) => s.classList.remove('selected')); // Bỏ chọn tất cả sao
+            for (let i = 0; i < selectedRating; i++) {
+                stars[i].classList.add('selected'); // Chọn sao từ 1 đến sao được chọn
+            }
+        });
+    });
+
+    // Xử lý khi nhấn nút Gửi đánh giá
+    submitBtn.addEventListener('click', () => {
+        const comment = commentBox.value.trim(); // Lấy nội dung bình luận, loại bỏ khoảng trắng
+
+        // Kiểm tra nếu chưa chọn sao
+        if (!selectedRating) {
+            alert('Vui lòng chọn số sao!');
+            return;
+        }
+
+        // Kiểm tra nếu bình luận rỗng
+        if (!comment) {
+            alert('Vui lòng nhập bình luận!');
+            return;
+        }
+
+        // Tạo đối tượng đánh giá
+        const newReview = {
+            stars: selectedRating,
+            comment: comment,
+            pageId: window.location.pathname,  // Lưu URL của trang hiện tại
+        };
+
+        // Lưu đánh giá vào localStorage
+        saveComment(newReview);
+
+        // Thêm đánh giá vào giao diện
+        addReviewToDOM(newReview);
+
+        // Xóa dữ liệu form
+        selectedRating = 0; // Reset số sao
+        stars.forEach((s) => s.classList.remove('selected')); // Bỏ chọn tất cả sao
+        commentBox.value = ''; // Xóa nội dung bình luận
+    });
+
+    // Hàm thêm đánh giá vào giao diện
+    function addReviewToDOM(review) {
+        const reviewItem = document.createElement('div');
+        reviewItem.classList.add('review-item');
+
+        const maxChars = 20; // Số ký tự tối đa hiển thị ban đầu
+        const isLongComment = review.comment.length > maxChars; // Kiểm tra xem bình luận có dài hơn giới hạn không
+        const shortComment = review.comment.substring(0, maxChars) + (isLongComment ? '...' : '');
+
+        reviewItem.innerHTML = `
+            <div class="stars">${'★'.repeat(review.stars)}${'☆'.repeat(5 - review.stars)}</div>
+            <p class="comment">
+                <span class="short">${shortComment}</span>
+                <span class="full" style="display: none;">${review.comment}</span>
+            </p>
+            ${isLongComment ? '<button class="toggle-btn">Xem thêm</button>' : ''}
+        `;
+
+        reviewsContainer.appendChild(reviewItem);
+
+        // Xử lý nút "Xem thêm" hoặc "Thu gọn"
+        if (isLongComment) {
+            const toggleBtn = reviewItem.querySelector('.toggle-btn');
+            const shortText = reviewItem.querySelector('.short');
+            const fullText = reviewItem.querySelector('.full');
+
+            toggleBtn.addEventListener('click', () => {
+                const isExpanded = fullText.style.display === 'inline';
+                shortText.style.display = isExpanded ? 'inline' : 'none';
+                fullText.style.display = isExpanded ? 'none' : 'inline';
+                toggleBtn.textContent = isExpanded ? 'Xem thêm' : 'Thu gọn';
+            });
+        }
+    }
+
+    // Lấy và hiển thị các bình luận cho trang hiện tại
+    function loadCommentsForCurrentPage() {
+        const url = window.location.pathname; // Lấy URL hiện tại
+        const storedComments = JSON.parse(localStorage.getItem('comments')) || [];
+        const commentsForPage = storedComments.filter(comment => comment.pageId === url); // Lọc bình luận theo trang hiện tại
+
+        commentsForPage.forEach(comment => addReviewToDOM(comment)); // Hiển thị bình luận cho trang hiện tại
+    }
+
+    // Lưu bình luận vào localStorage với URL trang
+    function saveComment(comment) {
+        const storedComments = JSON.parse(localStorage.getItem('comments')) || [];
+        storedComments.push(comment); // Thêm bình luận vào mảng
+        localStorage.setItem('comments', JSON.stringify(storedComments)); // Lưu lại vào localStorage
+    }
+});
+
+// Nút cuộn lên đầu trang
+const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+// Hiển thị nút khi bắt đầu cuộn
+window.onscroll = function () {
+    if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
+        scrollToTopBtn.style.display = "block"; // Hiển thị nút
+    } else {
+        scrollToTopBtn.style.display = "none"; // Ẩn nút
+    }
+};
+
+// Khi nhấn vào nút, cuộn lên đầu trang
+scrollToTopBtn.onclick = function () {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+};
+
+ </script>
+</body>
+</html>

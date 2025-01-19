@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khu du lịch Lan Vương</title>
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f4f6;
+            color: #2c3e50;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+        .navbar-menu {
+            display: flex;
+            justify-content: flex-end;
+            padding: 15px 0;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #ddd;
+        }
+        .navbar-menu a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            background-color: #28a745;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+        .navbar-menu a:hover {
+            background-color: #218838;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .muc-luc {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        .muc-luc h3 {
+            margin-top: 0;
+            color: #17a2b8;
+        }
+        .muc-luc ul {
+            list-style: none;
+            padding: 0;
+        }
+        .muc-luc li {
+            margin: 8px 0;
+        }
+        .muc-luc li a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        .muc-luc li a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+        .content-section {
+            margin-bottom: 40px;
+        }
+        .content-section h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        .content-section img {
+            display: block;
+            margin: 15px 0;
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+        th, td {
+            text-align: left;
+            padding: 12px;
+            font-size: 15px;
+        }
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        th {
+            background-color: #28a745;
+            color: white;
+        }
+        a {
+            color: #007bff;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        h1 {
+            text-align: center;
+            color: #333333;
+            font-size: 2.2em;
+            margin-bottom: 20px;
+        }
+        p {
+            margin: 10px 0;
+        }
+        li {
+            line-height: 1.6;
+        }
+        .review-section {
+  background: #fff;
+  padding: 100px;
+  border-radius: 8px;
+  max-width: 500px;
+  margin: 0 auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.review-section {
+  background: #fff;
+  padding: 100px;
+  border-radius: 8px;
+  max-width: 500px;
+  margin: 0 auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.rating {
+  display: flex;
+  justify-content: flex-start;
+  gap: 5px;
+  margin-bottom: 15px;
+}
+
+.star {
+  font-size: 25px;
+  cursor: pointer;
+  color: #ccc;
+  transition: color 0.3s;
+}
+
+.star:hover,
+.star.selected {
+  color: #f39c12;
+}
+
+textarea {
+  width: 100%;
+  height: 80px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  padding: 10px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+#reviews {
+  margin-top: 20px;
+}
+
+.review-item {
+  margin-bottom: 15px;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.review-item .stars {
+  color: #f39c12;
+}
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    background-color: #71f371;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display: none; /* Ẩn nút mặc định */
+}
+
+#scrollToTopBtn:hover {
+    background-color: #5af58d;
+}
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="navbar-menu">
+        <a href="index.html">Trang Chủ</a>
+        <a href="https://www.facebook.com/lanvuong2?mibextid=ZbWKwL">Fanpage</a>
+        <a href="mailto:lanvuongresot@gmail.com">Email</a>
+        <a href="tel:+02753838030">Hotline</a>
+    </div>
+
+    <h1>Review khu du lịch Lan Vương, Bến Tre - Cẩm nang du lịch</h1>
+    <p>Khu du lịch Lan Vương là khu du lịch nổi tiếng Bến Tre, nên thu hút khách du lịch. Tham khảo cẩm nang vui chơi, review khu du lịch Lan Vương, Bến Tre nha.</p>
+
+    <div class="muc-luc">
+        <h3>Mục lục</h3>
+        <ul>
+            <li><a href="#section1">1. Đôi nét giới thiệu về khu du lịch Lan Vương</a></li>
+            <li><a href="#section2">2. Nên đi du lịch Lan Vương khi nào?</a></li>
+            <li><a href="#section3">3. Phương tiện đi đến khu du lịch</a></li>
+            <li><a href="#section4">4. Giá vé Khu du lịch Lan Vương</a></li>
+            <li><a href="#section5">5. Vui chơi ở Khu du lịch Lan Vương có gì?</a></li>
+            <li><a href="#section6">6. Ẩm thực ở Lan Vương ra sao?</a></li>
+            <li><a href="#section7">7. Du lịch Lan Vương lưu trú ở đâu?</a></li>
+        </ul>
+    </div>
+    <button id="scrollToTopBtn" title="Lên đầu trang">↑</button>
+
+    <!-- Nội dung các phần giữ nguyên -->
+    <div id="section1" class="content-section">
+        <h2>1. Đôi nét giới thiệu về khu du lịch Lan Vương</h2>
+        <p>Trước đây khu du lịch này chỉ là những mảnh ruộng hoang sơ và đã được cải tạo, xây thành khu du lịch Lan Vương như hiện tại. Nằm tại tỉnh lộ 887, thuộc địa phận ấp 2, xã Phú Nhuận, thành phố Bến Tre, khu du lịch Lan Vương cách thành phố Bến Tre khoảng 5km.</p>
+        <p>Đến với khu du lịch Lan Vương, du khách không chỉ được thưởng thức những đặc sản của Bến Tre mà còn được đắm mình vào với thiên nhiên rộng lớn và tham gia vào những hoạt động vui chơi giải trí gần gũi và thân thuộc.</p>
+        <img src="img/lv1.jpg" alt="Khu du lịch Lan Vương">
+        <p>Đây là địa điểm để mọi người có thể gắn kết lại với nhau hơn và cũng là một nơi thích hợp để dã ngoại, cắm trại cho gia đình, các nhóm bạn bè, nhân viên trong công ty.</p>
+    </div>
+
+    <div id="section2" class="content-section">
+        <h2>2. Nên đi du lịch Lan Vương khi nào?</h2>
+        <p>Thời điểm thích hợp nhất để đi khu du lịch Lan Vương là vào tháng 6, 7, 8 vì đây là mùa khô nên các bạn sẽ được vui chơi thoải mái.</p>
+        <p>Đặc biệt, đây cũng là những tháng mà các loại trái cây bước vào mùa thu hoạch nên nếu đến vào thời điểm này các bạn sẽ được thưởng thức các loại trái cây thơm ngon.</p>
+        <img src="img/traicay.png" alt="Mùa trái cây">
+    </div>
+
+    <div id="section3" class="content-section">
+        <h2>3. Phương tiện đi đến khu du lịch</h2>
+        <h4>Đi KDL Lan Vương bằng xe máy, ô tô tự lái</h4>
+        <p>Nếu đi từ Sài Gòn bạn sẽ mất khoảng 2 giờ đồng hồ để tới được Khu du lịch Lan Vương. Đây cũng là đường đi dành cho những người đi bằng xe máy hoặc ô tô.</p>
+        <img src="img/bando.jpg" alt="Bản đồ đường đi">
+        <h4>Đi KDL Lan Vương bằng xe khách</h4>
+        <p>Nếu bạn đi xe khách từ Sài Gòn - Bến Tre thì nên chọn những nhà xe uy tín với giá vé dao động từ 70.000 - 100.000 đồng/người. Khi đến bến xe, bạn có thể tìm taxi hoặc xe khách để đến bến đò qua KDL Lan Vương.</p>
+        <img src="img/xekhach.jpg" alt="Đi bằng xe khách">
+        <p><a href="https://maps.app.goo.gl/FZgw8JNiCL6KL6no7">Xem ngay bản đồ đến Lan Vương</a></p>
+    </div>
+    <div id="section4" class="content-section">
+        <h2>4. Giá vé Khu du lịch Lan Vương</h2>
+        <title>Bảng giá dịch vụ Khu du lịch Lan Vương</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even){background-color: #f2f2f2}
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+ </head>
+ <body>
+
+ <h2>Bảng giá dịch vụ Khu du lịch Lan Vương</h2>
+
+ <table>
+  <tr>
+    <th>Dịch vụ</th>
+    <th>Giá (VNĐ)</th>
+  </tr>
+  <tr>
+    <td>Combo: Cùng bà ba cười thả ga</td>
+    <td>Khoảng 70.000đ/vé</td>
+  </tr>
+  <tr>
+    <td>Thuê tủ để đồ</td>
+    <td>Khoảng 30.000đ</td>
+  </tr>
+  <tr>
+    <td>Thuê áo phao</td>
+    <td>Khoảng 15.000đ</td>
+  </tr>
+  <tr>
+    <td>Thuê võng</td>
+    <td>Khoảng 20.000đ</td>
+  </tr>
+  <tr>
+    <td>Thuê ghe chèo hoặc thuyền thúng</td>
+    <td>Khoảng 80.000đ/chiếc</td>
+  </tr>
+  <tr>
+    <td>Tát mương bắt cá ao nhỏ</td>
+    <td>Khoảng 500.000đ/ao</td>
+  </tr>
+  <tr>
+    <td>Tát mương bắt cá ao lớn</td>
+    <td>Khoảng 800.000đ/ao</td>
+  </tr>
+  <tr>
+    <td>Xe đạp nước</td>
+    <td>Khoảng 60.000đ/chiếc</td>
+  </tr>
+  <tr>
+    <td>Xe đạp nước đôi</td>
+    <td>Khoảng 80.000đ/chiếc</td>
+  </tr>
+ </table>
+    </div>
+
+    <div id="section5" class="content-section">
+        <h2>5. Vui chơi ở Khu du lịch Lan Vương có gì?</h2>
+        <h4>Bơi thuyền</h4>
+        <p>Với không gian ngập tràn sắc xanh, cùng với khung cảnh thiên nhiên sông nước rộng lớn, du khách có thể tự chèo thuyền để ngắm nhìn khung cảnh xung quanh để khám phá vẻ đẹp thơ mộng đó.</p>
+        <img src="img/boi.webp" alt="Logo"><span class="logo-text"></span>
+        <h4>Tát mương bắt cá, lội ruộng bắt cua, bắt ốc</h4>
+        <p>Trải nghiệm cảm giác được làm người miền Tây chính hiệu, cùng nhau trổ tài bắt cá, bắt ốc. Điều sẽ khiến cho du khách cảm thấy hứng khởi hơn đó là có thể được ăn những thành phẩm do chính tay mình bắt được.</p>
+        <img src="img/ca.jpg" alt="Logo" ><span class="logo-text"></span>
+        <h4>Tham quan vườn trái cây</h4>
+        <p>Đâu cần phải đến vườn trái cây, nơi đây cũng trồng rất nhiều loại cây ăn quả phong phú, đến đây như lạc vào thế giới hoa quả đầy hấp dẫn.
+        </p>
+        <img src="img/cay.jpg" alt="Logo" ><span class="logo-text"></span>
+        <h4>Trò chơi đi xe đạp qua cầu khỉ</h4>
+        <p>Trò chơi này là một trò chơi nổi tiếng nhất tại KDL Lan Vương, trò chơi vô cùng thú vị này thu hút được rất nhiều lượt du khách tham gia bởi độ khó cũng như độ vui nhộn của nó.</p>
+        <img src="img/dap.jpg" alt="Logo" ><span class="logo-text"></span>
+        <p>Ngoài ra còn rất rất nhiều các hoạt động vui chơi khác nếu có cơ hội thì bạn hãy cùng gia đình và người thân đến đây để trải nghiệm.</p>
+    </div>
+
+    <div id="section6" class="content-section">
+        <h2>6. Ẩm thực ở Lan Vương ra sao?</h2>
+        <img src="img/amthuc.jpg" alt="Logo" ><span class="logo-text"></span>
+        <p>Đến với KDL Lan Vương các bạn sẽ không khỏi xuýt xoa về ẩm thực ở đây, các món ăn mang đậm chất miền Tây, hương vị thơm ngon và hấp dẫn, đậm đà hương vị miệt vườn, sông nước.</p> 
+            <p>Đặc biệt, các món ăn ở đây vô cùng đa dạng với mức giá phải chăng như món bánh xèo thơm ngon và vàng ươm, món cá lóc nướng kích thích vị giác của bạn với hương vị ngọt bùi của cá và gà nướng. Ngoài ra còn một số món như tôm luộc nước dừa, gỏi củ hủ dừa tôm thịt, cá tai tượng chiên xù, lẩu cá các loại,cháo sò huyết,....</p>
+    </div>
+    <div id="section7" class="content-section">
+        <h2>7. Du lịch Lan Vương lưu trú ở đâu?</h2>
+        <h4>Thuê lều, cắm trại</h4>
+        <p>Ngoài các trò chơi đặc sắc vào ban ngày, khu du lịch Lan Vương còn có một địa điểm để bạn cắm trại qua đêm cùng nhóm bạn. Nếu quyết định ở lại đây 2 ngày 1 đêm đừng bỏ qua hoạt động đốt lửa trại tại khu du lịch này nhé. Bạn có thể được hoà mình vào không khí nhộn nhịp và để lại những muộn phiền phía sau.</p>
+        <img src="img/camtrai.jpg" alt="Logo" ><span class="logo-text"></span>
+        <h4>Thuê phòng khách sạn</h4>
+       <p> Ngoài lựa chọn qua đêm tại khu du lịch thì các bạn có thể qua đêm tại các khách sạn, khu nghỉ dưỡng gần đó với mức giá không quá cao. Dưới đây là địa chỉ và tên của một số khách sạn gần đó:</p>
+       <li><strong>Ben Tre Farm Stay:</strong>  <a href="https://goo.gl/maps/8fBwnvFRk3y9n6aw6"> 479C Cầu Nhà Việc, ấp3, tỉnh Bến Tre</a></li>
+       <li><strong>Khu nghỉ dưỡng Mỹ An:</strong>  <a href="https://goo.gl/maps/nUn6PUoPRPauhbb66"> 18B, ấp Mỹ An B, xã Mỹ Thạnh An, TP.Bến Tre, tỉnh Bến Tre</a></li>
+        <li><strong>Ben Tre Riverside Resort:</strong> <a href="https://g.page/bentreriverside?share"> 708 Nguyễn Văn Tư, phường 55, tỉnh Bến Tre</a></li>
+        <li><strong>Khách sạn Hàm Luông:</strong><a href="https://goo.gl/maps/u2yyVdL3jVWMREhH8"> Số 200 C, đường Hùng Vương, phường 5, tỉnh Bến Tre</a></li>
+        <li><strong>Duyên Quê CHARMING COUNTRYSIDE:</strong><a href="https://goo.gl/maps/uEBCJhhzhCT5PsKu9"> 208D ấp 4, Nhơn Thạnh, phường 5, tỉnh Bến Tre</a></li> 
+        <div class="review-section">
+            <h2>Hãy chia sẻ cảm nhận của bạn khi tới Lan Vương</h2>
+        
+            <!-- Phần đánh giá sao -->
+            <div class="rating">
+              <span class="star" data-value="1">★</span>
+              <span class="star" data-value="2">★</span>
+              <span class="star" data-value="3">★</span>
+              <span class="star" data-value="4">★</span>
+              <span class="star" data-value="5">★</span>
+            </div>
+            <textarea id="comment" placeholder="Viết cảm nhận của bạn tại đây..."></textarea>
+            <button id="submit-btn">Gửi cảm nhận</button>
+        
+            <!-- Hiển thị đánh giá -->
+            <div id="reviews">
+              <h3>Các cảm nhận:</h3>
+            </div>
+          </div>
+    </div>
+     </div>
+     </div>
+</div>
+ <script>
+document.addEventListener('DOMContentLoaded', () => {
+    const stars = document.querySelectorAll('.star'); // Chọn tất cả các sao
+    const commentBox = document.getElementById('comment'); // Textarea bình luận
+    const submitBtn = document.getElementById('submit-btn'); // Nút gửi đánh giá
+    const reviewsContainer = document.getElementById('reviews'); // Khu vực hiển thị đánh giá
+    let selectedRating = 0; // Giá trị sao được chọn (mặc định là 0)
+
+    // Lấy dữ liệu đã lưu từ localStorage và hiển thị cho trang hiện tại
+    loadCommentsForCurrentPage();
+
+    // Xử lý chọn sao
+    stars.forEach((star) => {
+        star.addEventListener('click', () => {
+            selectedRating = parseInt(star.getAttribute('data-value')); // Lấy giá trị sao
+            stars.forEach((s) => s.classList.remove('selected')); // Bỏ chọn tất cả sao
+            for (let i = 0; i < selectedRating; i++) {
+                stars[i].classList.add('selected'); // Chọn sao từ 1 đến sao được chọn
+            }
+        });
+    });
+
+    // Xử lý khi nhấn nút Gửi đánh giá
+    submitBtn.addEventListener('click', () => {
+        const comment = commentBox.value.trim(); // Lấy nội dung bình luận, loại bỏ khoảng trắng
+
+        // Kiểm tra nếu chưa chọn sao
+        if (!selectedRating) {
+            alert('Vui lòng chọn số sao!');
+            return;
+        }
+
+        // Kiểm tra nếu bình luận rỗng
+        if (!comment) {
+            alert('Vui lòng nhập bình luận!');
+            return;
+        }
+
+        // Tạo đối tượng đánh giá
+        const newReview = {
+            stars: selectedRating,
+            comment: comment,
+            pageId: window.location.pathname,  // Lưu URL của trang hiện tại
+        };
+
+        // Lưu đánh giá vào localStorage
+        saveComment(newReview);
+
+        // Thêm đánh giá vào giao diện
+        addReviewToDOM(newReview);
+
+        // Xóa dữ liệu form
+        selectedRating = 0; // Reset số sao
+        stars.forEach((s) => s.classList.remove('selected')); // Bỏ chọn tất cả sao
+        commentBox.value = ''; // Xóa nội dung bình luận
+    });
+
+    // Hàm thêm đánh giá vào giao diện
+    function addReviewToDOM(review) {
+        const reviewItem = document.createElement('div');
+        reviewItem.classList.add('review-item');
+
+        const maxChars = 20; // Số ký tự tối đa hiển thị ban đầu
+        const isLongComment = review.comment.length > maxChars; // Kiểm tra xem bình luận có dài hơn giới hạn không
+        const shortComment = review.comment.substring(0, maxChars) + (isLongComment ? '...' : '');
+
+        reviewItem.innerHTML = `
+            <div class="stars">${'★'.repeat(review.stars)}${'☆'.repeat(5 - review.stars)}</div>
+            <p class="comment">
+                <span class="short">${shortComment}</span>
+                <span class="full" style="display: none;">${review.comment}</span>
+            </p>
+            ${isLongComment ? '<button class="toggle-btn">Xem thêm</button>' : ''}
+        `;
+
+        reviewsContainer.appendChild(reviewItem);
+
+        // Xử lý nút "Xem thêm" hoặc "Thu gọn"
+        if (isLongComment) {
+            const toggleBtn = reviewItem.querySelector('.toggle-btn');
+            const shortText = reviewItem.querySelector('.short');
+            const fullText = reviewItem.querySelector('.full');
+
+            toggleBtn.addEventListener('click', () => {
+                const isExpanded = fullText.style.display === 'inline';
+                shortText.style.display = isExpanded ? 'inline' : 'none';
+                fullText.style.display = isExpanded ? 'none' : 'inline';
+                toggleBtn.textContent = isExpanded ? 'Xem thêm' : 'Thu gọn';
+            });
+        }
+    }
+
+    // Lấy và hiển thị các bình luận cho trang hiện tại
+    function loadCommentsForCurrentPage() {
+        const url = window.location.pathname; // Lấy URL hiện tại
+        const storedComments = JSON.parse(localStorage.getItem('comments')) || [];
+        const commentsForPage = storedComments.filter(comment => comment.pageId === url); // Lọc bình luận theo trang hiện tại
+
+        commentsForPage.forEach(comment => addReviewToDOM(comment)); // Hiển thị bình luận cho trang hiện tại
+    }
+
+    // Lưu bình luận vào localStorage với URL trang
+    function saveComment(comment) {
+        const storedComments = JSON.parse(localStorage.getItem('comments')) || [];
+        storedComments.push(comment); // Thêm bình luận vào mảng
+        localStorage.setItem('comments', JSON.stringify(storedComments)); // Lưu lại vào localStorage
+    }
+});
+
+// Nút cuộn lên đầu trang
+const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+// Hiển thị nút khi bắt đầu cuộn
+window.onscroll = function () {
+    if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
+        scrollToTopBtn.style.display = "block"; // Hiển thị nút
+    } else {
+        scrollToTopBtn.style.display = "none"; // Ẩn nút
+    }
+};
+
+// Khi nhấn vào nút, cuộn lên đầu trang
+scrollToTopBtn.onclick = function () {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+};
+
+
+ </script>
+</body>
+</html>

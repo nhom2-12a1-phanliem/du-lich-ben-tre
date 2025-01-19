@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vàm Hồ</title>
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f4f6;
+            color: #2c3e50;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+        .navbar-menu {
+            display: flex;
+            justify-content: flex-end;
+            padding: 15px 0;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #ddd;
+        }
+        .navbar-menu a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            background-color: #28a745;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+        .navbar-menu a:hover {
+            background-color: #218838;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .muc-luc {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        .muc-luc h3 {
+            margin-top: 0;
+            color: #17a2b8;
+        }
+        .muc-luc ul {
+            list-style: none;
+            padding: 0;
+        }
+        .muc-luc li {
+            margin: 8px 0;
+        }
+        .muc-luc li a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        .muc-luc li a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+        .content-section {
+            margin-bottom: 40px;
+        }
+        .content-section h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        .content-section img {
+            display: block;
+            margin: 15px 0;
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+        th, td {
+            text-align: left;
+            padding: 12px;
+            font-size: 15px;
+        }
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        th {
+            background-color: #28a745;
+            color: white;
+        }
+        a {
+            color: #007bff;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        h1 {
+            text-align: center;
+            color: #333333;
+            font-size: 2.2em;
+            margin-bottom: 20px;
+        }
+        p {
+            margin: 10px 0;
+        }
+        li {
+            line-height: 1.6;
+        }
+        .review-section {
+  background: #fff;
+  padding: 100px;
+  border-radius: 8px;
+  max-width: 500px;
+  margin: 0 auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.review-section {
+  background: #fff;
+  padding: 100px;
+  border-radius: 8px;
+  max-width: 500px;
+  margin: 0 auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.rating {
+  display: flex;
+  justify-content: flex-start;
+  gap: 5px;
+  margin-bottom: 15px;
+}
+
+.star {
+  font-size: 25px;
+  cursor: pointer;
+  color: #ccc;
+  transition: color 0.3s;
+}
+
+.star:hover,
+.star.selected {
+  color: #f39c12;
+}
+
+textarea {
+  width: 100%;
+  height: 80px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  padding: 10px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+#reviews {
+  margin-top: 20px;
+}
+
+.review-item {
+  margin-bottom: 15px;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.review-item .stars {
+  color: #f39c12;
+}
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    background-color: #71f371;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display: none; /* Ẩn nút mặc định */
+}
+
+#scrollToTopBtn:hover {
+    background-color: #5af58d;
+}
+h2{
+color:#070101;
+}
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="navbar-menu">
+        <a href="index.html">Trang Chủ</a>
+        <a href="https://www.facebook.com/share/15bDRnX3P9/">Fanpage</a>
+        <a href="tel:+0903759744">Hotline</a>
+        <a href="https://www.tiktok.com/@sanchimvamho?lang=vi-VN&is_from_webapp=1&sender_device=mobile&sender_web_id=7433910906642695687"> Tiktok</a>
+        <a href="mailto:haivmexbt@gmail.com">Email</a>
+    </div>
+
+    <h1>Đến Sân chim Vàm Hồ chiêm ngưỡng vẻ đẹp thiên nhiên kỳ thú</h1>
+    <p>Sân chim Vàm Hồ là địa điểm du lịch Bến Tre thu hút đông đảo các bạn gần xa dừng chân tham quan, khám phá. Không chỉ sở hữu diện tích rộng lớn, nơi đây còn gây ấn tượng bởi hệ sinh thái phong phú, đa dạng. Vàm Hồ sẽ là chốn dừng chân lý tưởng dành cho bạn muốn hòa mình vào thiên nhiên tươi đẹp.</p>
+    <div class="muc-luc">
+        <h3>Mục lục</h3>
+        <ul>
+            <li><a href="#section1">1. Tổng quan về Sân chim Vàm Hồ</a></li>
+            <li><a href="#section2">2. Giá vé và hướng dẫn cách di chuyển tới sân chim</a></li>
+            <li><a href="#section3">3. Sân chim Vàm Hồ có gì đặc sắc?</a></li>
+        </ul>
+    </div>
+    <button id="scrollToTopBtn" title="Lên đầu trang">↑</button>
+
+    <!-- Nội dung các phần giữ nguyên -->
+    <div id="section1" class="content-section">
+        <h2>1. Tổng quan về Sân chim Vàm Hồ</h2>
+       <p>Bên cạnh vườn sinh thái Hoa Vương, Sân chim Vàm Hồ là điểm dừng chân không còn xa lạ gì với tín đồ du lịch thập phương. Sở hữu diện tích trải dài qua 3 xã: Mỹ Hòa, Tân Mỹ và Tân Xuân, sân chim lớn nhất tỉnh Bến Tre này gây ấn tượng bởi hệ sinh thái vô cùng đặc sắc. Từ cánh rừng xanh bạt ngàn đến những đàn chim chao cánh bay lượn, thiên nhiên kỳ thú nơi đây luôn biết cách níu chân người lữ hành.</p>
+       <p>Nếu lên kế hoạch du lịch Bến Tre nói chung và ghé tham quan Vàm Hồ nói riêng, mọi người nên thu xếp đi vào mùa chim bắt đầu tụ tập sinh sản, tức khoảng thời gian từ tháng 10 tới tháng 4 năm sau. Lúc này dựa vào tập tính vẫn giữ nguyên hàng chục năm qua, vô số loài chim cò sẽ đậu nặng trĩu trên các ngọn đước, bần, mắm... và soi bóng mình dưới dòng sông Ba Lai hiền hòa, mang đến bạn cảnh quan đẹp tựa tranh vẽ.</p>
+        <img src="img/vh1.jpg" alt="Mùa trái cây">
+    </div>
+
+    <div id="section2" class="content-section">
+        <h2>2. Giá vé và hướng dẫn cách di chuyển tới sân chim</h2>
+        <p><strong>Giá vé: </strong>150.000 VNĐ/khách (bao gồm hướng dẫn viên tham quan rừng).</p>
+        <p><strong>Giờ mở cửa: </strong>24/24 tất cả các ngày trong tuần.</p>
+        <p><strong>Địa chỉ: </strong>Xã Mỹ Hòa - Tân Mỹ - Tân Xuân, huyện Ba Tri, tỉnh Bến Tre</p>
+        <p><strong>Cách di chuyển: </strong> Sân chim Vàm Hồ thuộc địa phận huyện Ba Tri có vị trí cách Thành phố Bến Tre khoảng 35km, mất gần 1 giờ đồng hồ di chuyển. Nếu đón xe khách đi Bến Tre từ Sài Gòn, sau khi dừng chân tại trung tâm thành phố, bạn có thể thuê xe máy hoặc bắt taxi tới thẳng điểm tham quan. Nhìn chung, cung đường di chuyển đến Vàm Hồ khá dễ đi. Mọi người chỉ cần chạy dọc đường Huỳnh Tấn Phát qua ĐH173 rồi men theo con sông Ba Lai hướng đi Chợ Tân Mỹ là tới được Sân chim Vàm Hồ. Nếu là lần đầu du lịch, ở những khúc cua, bạn có thể kết hợp hỏi thăm người dân địa phương để tránh bị lạc.</p>
+        <img src="img/vh2.jpg" alt="Mùa trái cây">
+        <p><a href="https://maps.app.goo.gl/JcgfNZHbbfCTW3VU6">Xem đường đi tại đây</a></p>
+    </div>
+
+    <div id="section3" class="content-section">
+        <h2>3. Sân chim Vàm Hồ có gì đặc sắc?</h2>
+      <h3>3.1 Đặc điểm tự nhiên của Sân chim Vàm Hồ</h3>
+      <p>Sân chim Vàm Hồ nằm bên bờ hữu ngạn sông Ba Lai thuộc địa phận các xã Mỹ Hòa, Tân Mỹ và Tân Xuân của huyện Ba Tri. Nơi đây gây ấn tượng bởi diện tích lên đến 67ha cùng đặc điểm tự nhiên mang đậm dấu ấn rừng ngập mặn ven biển. Sở hữu hệ sinh thái đa dạng, phong phú, thiên nhiên Vàm Hồ được đánh giá cao về giá trị sinh học cũng như tiềm năng phát triển du lịch sinh thái.</p>
+        <p>Nhờ vào độ cao trung bình 1,25m so với mực nước biển nên Sân chim Vàm Hồ là vùng đất ngập mặn an toàn với triều cường. Thảm thực vật nơi đây ở tầng cao có dừa nước, chà là, đước, mắm tạo môi trường sống lý tưởng cho các loài chim, trong khi tầng thấp gồm các loài cây như đước bôi, bụp tra, ô rô, cóc kèn, lau sậy... rất thích hợp để cò, vạc làm tổ sinh sản. Không dừng lại ở đó, hệ thống kênh rạch chằng chịt còn mang đến Vàm Hồ nguồn tôm, cá cực kì trù phú.</p>
+      <p>Có thể nói, từ những đặc điểm về thiên nhiên kể trên mà nơi đây sở hữu cho mình hơn 120 loài chim quý hiếm khác nhau. Từ cò, vạc đến cồng cộc, diệc xám, quắm trắng... tất cả đều có mặt tại sân chim rộng lớn này cùng nhiều loại thú hoang dã. Tín đồ du lịch khi có dịp dừng chân tại Vàm Hồ thường không khỏi choáng ngợp, thích thú trước cảnh quan hoang sơ, huyền bí, chốc chốc lại thấy chim sa, cá lặn nơi đây.</p>.
+        <img src="img/vh3.jpeg" alt="Mùa trái cây">
+        <h3>3.2 Hoạt động khám phá, trải nghiệm tại sân chim</h3>
+        <p>Sân chim Vàm Hồ là một điểm du lịch sinh thái đa dạng với nhiều hoạt động thú vị. Du khách có thể tham gia chuyến xuồng chèo qua rừng ngập mặn Bến Tre, nơi tiếng chim rộn ràng giữa không gian thiên nhiên hoang dã, đồng thời tìm hiểu về khu căn cứ kháng chiến lịch sử. Các hoạt động giải trí như ngả lưng trên võng dưới tán cây, tham gia trò chơi dân gian như đi cầu khỉ, đạp xích lô mini hay chơi đánh đu sẽ mang đến trải nghiệm thư giãn, vui vẻ.</p>
+        <p>Sân chim Vàm Hồ còn nổi bật với khu vực trồng cây ăn trái quanh năm. Bạn có thể thoải mái tham quan, khám phá và thưởng thức các loại trái cây tươi ngon ngay tại vườn, như bưởi, mít, đu đủ, mãng cầu xiêm... Những trái cây này chín mọng, tỏa hương thơm ngào ngạt khiến ai ghé thăm đều không thể cưỡng lại.</p>
+        <p>Ngoài ra, nhà hàng trong khuôn viên sân chim phục vụ các món đặc sản của vùng như lẩu bần, cá kho nồi đất, mắm tép thịt ba chỉ cùng các loại bánh dân gian. Các món ăn này sẽ làm hài lòng những tín đồ ẩm thực yêu thích các hương vị truyền thống.</p>
+        <p>Cuối ngày, bạn không thể bỏ qua cảnh hoàng hôn bên sông Ba Lai. Hàng ngàn con chim bay về sau một ngày kiếm ăn, tạo nên một khung cảnh thiên nhiên hùng vĩ và đẹp mắt, hòa cùng tiếng gọi của đàn vạc và ánh chiều tà nhuộm sắc cam rực rỡ. Đây là thời khắc lý tưởng để cảm nhận vẻ đẹp tuyệt vời của Sân chim Vàm Hồ.</p>
+        <img src="img/vh4.jpeg" alt="Mùa trái cây">
+        <p><em>Ghé thăm Sân chim Vàm Hồ, bên cạnh nghỉ ngơi, thư giãn và hòa mình thiên nhiên tràn đầy sức sống, bạn còn có cơ hội tham gia vô số hoạt động du lịch thú vị. Gây ấn tượng nhất trong số đó là các trò chơi dân gian như đi cầu khỉ, đạp xích lô mini, chơi đánh đu...</em></p>
+        <img src="img/vh5.jpeg" alt="Mùa trái cây">
+        <p><em>Với nhiều hoạt động vui chơi giải trí đặc sắc kết hợp khám phá thiên nhiên kỳ thú, Vàm Hồ thường được người dân bản địa và tín đồ xê dịch chọn làm điểm dừng chân cho các chuyến du lịch khám phá hay team building </em></p>
+        <img src="img/vh6.jpg" alt="Mùa trái cây">
+        <p><em>Trải nghiệm các trò chơi nhân gian</em></p>
+        <img src="img/vh7.jpeg" alt="Mùa trái cây">
+        <p><em>Vui chơi thỏa thích rồi, sao có thể bỏ qua cơ hội trải nghiệm đa dạng món ăn địa phương thơm ngon khó cưỡng như lẩu bần, cá kho nồi đất, mắm tép... tại khu vực nhà hàng trong khuôn viên Khu du lịch Vàm Hồ bạn nhỉ</em></p>
+    </div>
+    <div class="review-section">
+        <h2>Hãy chia sẻ cảm nhận của bạn khi đến Sân chim Vàm Hồ </h2>
+            <div class="rating">
+              <span class="star" data-value="1">★</span>
+              <span class="star" data-value="2">★</span>
+              <span class="star" data-value="3">★</span>
+              <span class="star" data-value="4">★</span>
+              <span class="star" data-value="5">★</span>
+            </div>
+            <textarea id="comment" placeholder="Viết cảm nhận của bạn tại đây..."></textarea>
+            <button id="submit-btn">Gửi cảm nhận</button>
+        
+            <!-- Hiển thị đánh giá -->
+            <div id="reviews">
+              <h3>Các cảm nhận:</h3>
+            </div>
+          </div>
+    </div>
+     </div>
+     </div>
+</div>
+ <script>
+ document.addEventListener('DOMContentLoaded', () => {
+    const stars = document.querySelectorAll('.star'); // Chọn tất cả các sao
+    const commentBox = document.getElementById('comment'); // Textarea bình luận
+    const submitBtn = document.getElementById('submit-btn'); // Nút gửi đánh giá
+    const reviewsContainer = document.getElementById('reviews'); // Khu vực hiển thị đánh giá
+    let selectedRating = 0; // Giá trị sao được chọn (mặc định là 0)
+
+    // Lấy dữ liệu đã lưu từ localStorage và hiển thị cho trang hiện tại
+    loadCommentsForCurrentPage();
+
+    // Xử lý chọn sao
+    stars.forEach((star) => {
+        star.addEventListener('click', () => {
+            selectedRating = parseInt(star.getAttribute('data-value')); // Lấy giá trị sao
+            stars.forEach((s) => s.classList.remove('selected')); // Bỏ chọn tất cả sao
+            for (let i = 0; i < selectedRating; i++) {
+                stars[i].classList.add('selected'); // Chọn sao từ 1 đến sao được chọn
+            }
+        });
+    });
+
+    // Xử lý khi nhấn nút Gửi đánh giá
+    submitBtn.addEventListener('click', () => {
+        const comment = commentBox.value.trim(); // Lấy nội dung bình luận, loại bỏ khoảng trắng
+
+        // Kiểm tra nếu chưa chọn sao
+        if (!selectedRating) {
+            alert('Vui lòng chọn số sao!');
+            return;
+        }
+
+        // Kiểm tra nếu bình luận rỗng
+        if (!comment) {
+            alert('Vui lòng nhập bình luận!');
+            return;
+        }
+
+        // Tạo đối tượng đánh giá
+        const newReview = {
+            stars: selectedRating,
+            comment: comment,
+            pageId: window.location.pathname,  // Lưu URL của trang hiện tại
+        };
+
+        // Lưu đánh giá vào localStorage
+        saveComment(newReview);
+
+        // Thêm đánh giá vào giao diện
+        addReviewToDOM(newReview);
+
+        // Xóa dữ liệu form
+        selectedRating = 0; // Reset số sao
+        stars.forEach((s) => s.classList.remove('selected')); // Bỏ chọn tất cả sao
+        commentBox.value = ''; // Xóa nội dung bình luận
+    });
+
+    // Hàm thêm đánh giá vào giao diện
+    function addReviewToDOM(review) {
+        const reviewItem = document.createElement('div');
+        reviewItem.classList.add('review-item');
+
+        const maxChars = 20; // Số ký tự tối đa hiển thị ban đầu
+        const isLongComment = review.comment.length > maxChars; // Kiểm tra xem bình luận có dài hơn giới hạn không
+        const shortComment = review.comment.substring(0, maxChars) + (isLongComment ? '...' : '');
+
+        reviewItem.innerHTML = `
+            <div class="stars">${'★'.repeat(review.stars)}${'☆'.repeat(5 - review.stars)}</div>
+            <p class="comment">
+                <span class="short">${shortComment}</span>
+                <span class="full" style="display: none;">${review.comment}</span>
+            </p>
+            ${isLongComment ? '<button class="toggle-btn">Xem thêm</button>' : ''}
+        `;
+
+        reviewsContainer.appendChild(reviewItem);
+
+        // Xử lý nút "Xem thêm" hoặc "Thu gọn"
+        if (isLongComment) {
+            const toggleBtn = reviewItem.querySelector('.toggle-btn');
+            const shortText = reviewItem.querySelector('.short');
+            const fullText = reviewItem.querySelector('.full');
+
+            toggleBtn.addEventListener('click', () => {
+                const isExpanded = fullText.style.display === 'inline';
+                shortText.style.display = isExpanded ? 'inline' : 'none';
+                fullText.style.display = isExpanded ? 'none' : 'inline';
+                toggleBtn.textContent = isExpanded ? 'Xem thêm' : 'Thu gọn';
+            });
+        }
+    }
+
+    // Lấy và hiển thị các bình luận cho trang hiện tại
+    function loadCommentsForCurrentPage() {
+        const url = window.location.pathname; // Lấy URL hiện tại
+        const storedComments = JSON.parse(localStorage.getItem('comments')) || [];
+        const commentsForPage = storedComments.filter(comment => comment.pageId === url); // Lọc bình luận theo trang hiện tại
+
+        commentsForPage.forEach(comment => addReviewToDOM(comment)); // Hiển thị bình luận cho trang hiện tại
+    }
+
+    // Lưu bình luận vào localStorage với URL trang
+    function saveComment(comment) {
+        const storedComments = JSON.parse(localStorage.getItem('comments')) || [];
+        storedComments.push(comment); // Thêm bình luận vào mảng
+        localStorage.setItem('comments', JSON.stringify(storedComments)); // Lưu lại vào localStorage
+    }
+});
+
+// Nút cuộn lên đầu trang
+const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+// Hiển thị nút khi bắt đầu cuộn
+window.onscroll = function () {
+    if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
+        scrollToTopBtn.style.display = "block"; // Hiển thị nút
+    } else {
+        scrollToTopBtn.style.display = "none"; // Ẩn nút
+    }
+};
+
+// Khi nhấn vào nút, cuộn lên đầu trang
+scrollToTopBtn.onclick = function () {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+};
+
+ </script>
+</body>
+</html>
